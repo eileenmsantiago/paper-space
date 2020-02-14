@@ -1,0 +1,23 @@
+.btn-primary {
+    height: 50px;
+    width: 200px;
+    background: green;
+    font-size:16px;
+    color: white;
+}
+
+.btn-secondary {
+    height: 50px;
+    width: 200px;
+    background:grey;
+    font-size:16px;
+    color: black;
+}
+
+.btn-tertiary {
+    height: 50px;
+    width: 200px;
+    background:red;
+    font-size:16px;
+    color: white;
+}
