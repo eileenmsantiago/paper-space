@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import Button from './ui/Button/Button.js';
 import Header from './ui/Header/Header.js';
+import './styles/main.scss';
 import './App.css';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       
-      <Header homeText="Bonjour"/>
+      <Header homeText="PaperSpace"/>
 
       Form here:
       <Button text="Submit" styleType="primary"/>
