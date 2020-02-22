@@ -1,0 +1,10 @@
+// This file is where all of the stylesheets will be imported
+
+// reboot is the same as normalize/reset.css
+@import '~bootstrap/scss/bootstrap-reboot';
+// for layouts, containers, columns, etc. 
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import './variables.scss';
+@import './styles.scss';
