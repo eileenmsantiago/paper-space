@@ -6,5 +6,9 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+@import './mixins/typography.scss';
 @import './variables.scss';
-@import './styles.scss';
+@import './global.scss';
+@import '../Pages/Home/Home.scss';
+
+

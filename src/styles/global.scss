@@ -1,0 +1,12 @@
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

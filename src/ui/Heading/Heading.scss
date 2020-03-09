@@ -1,0 +1,13 @@
+.heading {
+    &--type {
+        &-h1 {
+            @include type-heading-h1();
+        }
+        &-h2 {
+            @include type-heading-h2();
+        }
+        &-h3 {
+            @include type-heading-h3();
+        }
+    }
+}

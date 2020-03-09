@@ -1,0 +1,58 @@
+@mixin type-body-base {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    color: $color-neutral-light-black;
+}
+
+@mixin type-heading-base {
+    font-family: 'Merriweather', serif;
+    font-weight: normal;
+    line-height: normal;
+}
+
+@mixin type-body-regular {
+    @include type-body-base();
+    font-size: 16px;
+    line-height: 26px;
+}
+
+@mixin type-body-small {
+    @include type-body-base();
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@mixin type-body-labels {
+    @include type-body-base();
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+@mixin type-body-tab {
+    @include type-body-base();
+    font-size: 14px;
+    line-height: 16px;
+    // font-weight: 600;
+}
+
+@mixin type-heading-h1 {
+    @include type-heading-base();
+    font-size: 24px;
+    line-height: 38px;
+    // font-weight: 900;
+}
+
+@mixin type-heading-h2 {
+    @include type-heading-base();
+    font-size: 17px;
+    // font-weight: 600;
+    line-height: 35px;
+}
+
+@mixin type-heading-h3 {
+    @include type-heading-base();
+    font-weight: 600;
+    font-size: 20px;
+}
