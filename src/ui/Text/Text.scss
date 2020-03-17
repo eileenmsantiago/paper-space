@@ -7,6 +7,9 @@
         &-regular {
             @include type-body-regular();
         }
+        &-large {
+            @include type-body-large();
+        }
         &-labels {
             @include type-body-labels();
         }
@@ -40,18 +43,34 @@
             }
         }
         &-secondary {
-            color:$color-secondary-peach;
-            color:$color-secondary-purple;
+            &-peach {
+                color:$color-secondary-peach;
+            }
+            &-purple {
+                color:$color-secondary-purple;
+            }
         }
         &-light {
-            color:$color-neutral-light-black;
-            color:$color-neutral-light-grey;
-            color:$color-neutral-light-white;
+            &-black {
+                color:$color-neutral-light-black;
+            }
+            &-grey {
+                color:$color-neutral-light-grey;
+            }
+            &-white {
+                color:$color-neutral-light-white;
+            }
         }
         &-dark {
-            color:$color-neutral-dark-black;
-            color:$color-neutral-dark-grey;
-            color:$color-neutral-dark-white;
+            &-black {
+                color:$color-neutral-dark-black;
+            }
+            &-grey {
+                color:$color-neutral-dark-grey;
+            }
+            &-white {
+                color:$color-neutral-dark-white;
+            }
         }
     }
 }

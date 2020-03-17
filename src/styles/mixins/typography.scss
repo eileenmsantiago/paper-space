@@ -9,6 +9,7 @@
     font-family: 'Merriweather', serif;
     font-weight: normal;
     line-height: normal;
+    color: $color-neutral-light-black;
 }
 
 @mixin type-body-regular {
@@ -21,6 +22,11 @@
     @include type-body-base();
     font-size: 14px;
     line-height: 16px;
+}
+@mixin type-body-large {
+    @include type-body-base();
+    font-size: 17px;
+    line-height: 35px;
 }
 
 @mixin type-body-labels {
@@ -41,13 +47,13 @@
     @include type-heading-base();
     font-size: 24px;
     line-height: 38px;
-    // font-weight: 900;
+    font-weight: 900;
 }
 
 @mixin type-heading-h2 {
     @include type-heading-base();
     font-size: 17px;
-    // font-weight: 600;
+    font-weight: 600;
     line-height: 35px;
 }
 

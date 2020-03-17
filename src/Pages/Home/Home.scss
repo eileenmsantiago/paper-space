@@ -1,0 +1,15 @@
+.home {
+    &__wrapper {
+        display: flex;
+        padding: 2rem;
+    }
+}
+
+.header {
+    &__title {
+        display: flex;
+        &-icon {
+            margin-left: auto;
+        }
+    }
+}
