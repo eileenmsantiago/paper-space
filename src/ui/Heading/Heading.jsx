@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Heading = (props) => {
-
     // Default style to level value 
     let style;
     if (!props.style) {
@@ -21,10 +20,9 @@ const Heading = (props) => {
             {props.children}
         </Tag>
     )
-}
-
-Heading.defaultProps = {
-    level: "h2"
+    Heading.defaultProps = {
+        level: "h2"
+    }
 };
 
 export default Heading;
