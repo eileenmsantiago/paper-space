@@ -6,6 +6,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
@@ -32,10 +34,10 @@
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""
   },
-    "proxy": "http://localhost:5000",
-    "secure": false,
-    "eslintConfig": {
-      "extends": "react-app"
+  "proxy": "http://localhost:5000",
+  "secure": false,
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

@@ -7,7 +7,8 @@ const CardCarousel = (props) => {
 
     const params = {
         spaceBetween: 30,
-        slidesPerView: 'auto'
+        slidesPerView: 'auto',
+        slidesOffsetBefore: 20
     };
     return (
         <div className="card-carousel">

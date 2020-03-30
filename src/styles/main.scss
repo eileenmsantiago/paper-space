@@ -6,12 +6,19 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-@import './mixins/typography.scss';
-@import './variables.scss';
-@import './global.scss';
+@import '/variables.scss';
+@import '/global.scss';
+
+@import '/mixins/typography.scss';
+@import '/mixins/links.scss';
+
+@import '../ui/PSContainer/PSContainer.scss';
 @import '../Pages/Home/Home.scss';
+@import '../Pages/Write/Write.scss';
+@import '../Pages/Profile/Profile.scss';
 @import '../ui/Heading/Heading.scss';
 @import '../ui/Text/Text.scss';
 @import '../ui/CardCarousel/CardCarousel.scss';
 @import '../ui/Card/Card.scss';
+@import '../ui/Nav/Nav.scss';
 

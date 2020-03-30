@@ -4,6 +4,7 @@ const Text = (props) => {
     return <span
     
     className={`
+        body-text
         body-text--size-${props.size}
         body-text--weight-${props.weight}
         body-text--color-${props.color}

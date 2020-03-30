@@ -4,6 +4,11 @@ a {
     }
 }
 
+ul {
+    margin: 0;
+    padding-inline-start: 0px;
+}
+
 @media (max-width: 768px) {
     .col-md-6 {
         flex: 0 0 100%;

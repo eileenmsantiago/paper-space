@@ -1,7 +1,8 @@
 .home {
+    height: 100vh;
+    padding-bottom: 85px;
     &__wrapper {
         display: flex;
-        padding: 2rem;
     }
 }
 
@@ -12,4 +13,8 @@
             margin-left: auto;
         }
     }
+}
+
+.close {
+    margin-left: auto;
 }
