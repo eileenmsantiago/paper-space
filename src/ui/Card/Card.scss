@@ -3,4 +3,17 @@
     width: 100%;
     border: dashed 1px $color-neutral-light-grey;
     border-radius: 20px;
+
+    &__wrapper {
+        padding: 1.75rem 1.25rem;
+    }
+    &__heading {
+        text-transform: uppercase;
+        margin-bottom: 0.15rem;
+    }
+    &__entry-count {
+        position: absolute;
+        bottom: 20px;
+    }
 }
+

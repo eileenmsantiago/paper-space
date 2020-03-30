@@ -13,11 +13,30 @@ const CardCarousel = (props) => {
     return (
         <div className="card-carousel">
              <Swiper {...params}>
-                <div><Card colorHex="#fff">Journal Entry 1</Card></div>
-                <div><Card colorHex="#fff">Journal Entry 1</Card></div>
-                <div><Card colorHex="#fff">Journal Entry 1</Card></div>
-                <div><Card colorHex="#fff">Journal Entry 1</Card></div>
-                <div><Card colorHex="#fff">Journal Entry 1</Card></div>
+                <div>
+                    <Card 
+                        colorHex="#fff"
+                        cardDate="Jan 16-21"
+                        cardDetail="Journal one"
+                        cardEntries="1 entry"
+                    />
+                </div>
+                <div>
+                    <Card 
+                        colorHex="#fff"
+                        cardDate="Jan 16-21"
+                        cardDetail="Journal two"
+                        cardEntries="1 entry"
+                    />
+                </div>
+                <div>
+                    <Card 
+                        colorHex="#fff"
+                        cardDate="Jan 16-21"
+                        cardDetail="Journal three"
+                        cardEntries="1 entry"
+                    />
+                </div>
             </Swiper>
         </div>
     )
