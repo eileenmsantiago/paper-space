@@ -41,7 +41,7 @@
     @include type-body-base();
     font-size: 14px;
     line-height: 16px;
-    // font-weight: 600;
+    letter-spacing: 0.12px;
 }
 
 @mixin type-heading-h1 {

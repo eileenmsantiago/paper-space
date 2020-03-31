@@ -1,0 +1,39 @@
+.entries-list {
+
+}
+
+.entry-card {
+    display: flex;
+    width: 335px;
+    height: 120px;
+    background: $color-neutral-light-white2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+    &__highlight {
+        width: 30px;
+        height: 119px;
+        border-radius: 10px 0 0 10px;
+        background: $color-brand-light-blue;
+    }
+
+    &__wrapper {
+        margin: 0.8rem 1rem;
+    }
+
+    &__header-container {
+        // position: absolute;
+        display: flex;
+        margin-bottom: 0.25rem;
+    }
+
+    &__header {
+        margin-right: 1.5rem;
+    }
+
+    &__body {
+        
+    }
+}
