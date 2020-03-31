@@ -1,0 +1,20 @@
+.journal {
+    &__header {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    &__header-heading {
+        margin-left: 1rem;
+    }
+    &__body {
+        &-header {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.close {
+    margin-left: auto;
+}

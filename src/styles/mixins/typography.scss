@@ -22,6 +22,7 @@
     @include type-body-base();
     font-size: 14px;
     line-height: 16px;
+    letter-spacing: 2px;
 }
 @mixin type-body-large {
     @include type-body-base();

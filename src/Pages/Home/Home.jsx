@@ -9,8 +9,33 @@ import Text from '../../ui/Text/Text';
 import CardCarousel from '../../ui/CardCarousel/CardCarousel';
 
 // library.add(faSearch)
+const weeks = [
+    {
+        dateRange: "Jan 1-7",
+        detail: "journal 1",
+        entries: [1]
+    },
+    {
+        dateRange: "Jan 8-15",
+        detail: "journal 1",
+        entries: []
+    },
+    {
+        dateRange: "Jan 16-21",
+        detail: "journal 1",
+        entries: []
+    }
+]
 
 const Home = (props) => {
+
+    let hasEntries = false;
+    weeks.forEach(week => {
+        if(week.entries.length > 0) {
+            hasEntries = true;
+        }
+    })
+
     return(
         <div className="home">
             <PSContainer>
@@ -25,12 +50,12 @@ const Home = (props) => {
                             </button>
                         </div>
                         <Text size="large" color="light-grey">
-                            Welcome to your PaperSpace, click “+” to write your first entry.
+                            {hasEntries ? `Here are your past journal collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}
                         </Text>
                     </div>
                 </div>
             </PSContainer>
-            <CardCarousel/>
+            <CardCarousel weeks={weeks}/>
         </div>
     );
 }
