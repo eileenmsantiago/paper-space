@@ -4,9 +4,12 @@
         align-items: center;
         margin-bottom: 2rem;
         width: 100%;
-    }
-    &__header-heading {
-        margin-left: 1rem;
+        &-heading {
+            margin-left: 1rem;
+        }
+        &-icon {
+            margin-left: auto;
+        }
     }
     &__body {
         &-header {
@@ -15,6 +18,3 @@
     }
 }
 
-.close {
-    margin-left: auto;
-}

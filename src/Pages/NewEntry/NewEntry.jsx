@@ -1,8 +1,11 @@
 import React from 'react';
 import Text from '../../ui/Text/Text';
 import PSContainer from '../../ui/PSContainer/PSContainer';
+import TextArea from '../../ui/TextArea/TextArea';
+import Icon from '../../ui/Icon/Icon';
 
 const NewEntry = (props) => {
+    const {closeLink} = props;
     return (
         <PSContainer>
             <div className="journal">
@@ -12,9 +15,12 @@ const NewEntry = (props) => {
                         <div className="journal__header-heading">
                             <Text size="small" weight="light" color="light-black">USE PROMPTS</Text>
                         </div>
-                        <button type="button" className="close" aria-label="Close">
+                        <a className="journal__header-icon" href={closeLink}>
+                            <Icon name="close"/>
+                        </a>
+                        {/* <button type="button" className="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </button> */}
                     </div>
                     <div className="journal__body">
                         <div className="journal__body-header">
@@ -24,9 +30,10 @@ const NewEntry = (props) => {
                             </Text>
                         </div>
                         <div className="journal__body-content">
-                            <Text size="regular" color="light-grey2">
+                            {/* <Text size="regular" color="light-grey2">
                                 Start Writing...
-                            </Text> 
+                            </Text>  */}
+                            <TextArea></TextArea>
                         </div>
                     </div>
                 </div>

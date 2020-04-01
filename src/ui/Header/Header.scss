@@ -10,4 +10,10 @@
 
 .close {
     margin-left: auto;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #615B5B;
+    &:focus {
+        outline: none;
+    }
 }

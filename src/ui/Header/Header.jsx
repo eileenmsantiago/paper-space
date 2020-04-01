@@ -1,7 +1,7 @@
  import React from 'react';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
 import Icon from '../Icon/Icon';
 function Header(props) {
 
@@ -20,9 +20,12 @@ function Header(props) {
                         {title}
                     </Heading> 
                 : null}
-                <button type="button" className="close" aria-label="Close">
+                {/* <button type="button" className="close" aria-label="Close">
                     <SearchIcon />
-                </button>
+                </button> */}
+                    <a href={backLink}>
+                        <Icon name="back"/>
+                    </a>
             </div>
             {subtitle ? 
               <Text size="large" color="light-grey">

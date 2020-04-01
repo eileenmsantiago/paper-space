@@ -1,15 +1,29 @@
 import React from 'react';
 import './styles/main.scss';
-import Home from './Pages/Home/Home.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Pages/Home/Home.jsx';
 import NewEntry from './Pages/NewEntry/NewEntry.jsx';
 import Profile from './Pages/Profile/Profile.jsx';
 import Nav from './ui/Nav/Nav.jsx';
 import Entries from './Pages/Entries/Entries';
-// import firebase, { initializeApp } from “firebase”;
-// import firebaseConfig from “./Config”;
-// library.add(faSearch)
+import firebase, { initializeApp } from “firebase”;
+import firebaseConfig from “./Config”;
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+const {
+  user,
+  signOut,
+  signInWithGoogle,
+} = this.props;
 
 // const journs = {
 //   1: {
@@ -102,6 +116,7 @@ const journals = [
 ]
 
 function App() {
+
   return (
     <Router>
       <div className="App">
@@ -116,5 +131,8 @@ function App() {
     </Router>
   );
 }
-
-export default App;
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
+// export default App;

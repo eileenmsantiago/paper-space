@@ -12,7 +12,6 @@ const Home = (props) => {
             hasEntries = true;
         }
     })
-
     return(
         <div className="home">
             <PSContainer>

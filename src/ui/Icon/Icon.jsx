@@ -7,5 +7,5 @@ const Icon = (props) => {
 
     return <SvgIcon className={props.className}/>
 }
-
+            
 export default Icon;
