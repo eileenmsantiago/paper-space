@@ -1,0 +1,37 @@
+.btn {
+    width: 335px;
+    height: 50px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    &-primary {
+        background: $color-primary-peach;
+        border-color: $color-primary-peach;
+        color: $color-neutral-light-white;
+        &:hover {
+            color: $color-neutral-light-white;
+            background-color: $color-secondary-peach;
+            border-color: $color-secondary-peach;
+        }
+        &:focus {
+            color: $color-neutral-light-white;
+            background-color: $color-secondary-peach;
+            border-color: $color-secondary-peach;
+        }
+        &:disabled {
+            color: $color-neutral-light-black;
+            background-color: $color-neutral-light-grey2;
+            border-color: $color-neutral-light-grey2;
+        }
+        &:active {
+            color: $color-neutral-light-white;
+            background-color: $color-secondary-peach;
+            border-color: $color-secondary-peach;
+        }
+    }
+    &-secondary {
+        background: $color-neutral-light-white;
+        border-color: $color-primary-peach;
+        color: $color-primary-peach;
+    }
+
+}

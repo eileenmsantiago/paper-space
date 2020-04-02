@@ -1,8 +1,8 @@
 import React from 'react';
-import Text from '../../ui/Text/Text';
-import PSContainer from '../../ui/PSContainer/PSContainer';
-import TextArea from '../../ui/TextArea/TextArea';
-import Icon from '../../ui/Icon/Icon';
+import Text from '../../components/Text/Text';
+import PSContainer from '../../components/PSContainer/PSContainer';
+import TextArea from '../../components/TextArea/TextArea';
+import Icon from '../../components/Icon/Icon';
 
 const NewEntry = (props) => {
     const {closeLink} = props;

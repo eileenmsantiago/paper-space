@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../../ui/Header/Header';
-import PSContainer from '../../ui/PSContainer/PSContainer';
-import EntryCard from '../../ui/EntryCard/EntryCard';
+import Header from '../../components/Header/Header';
+import PSContainer from '../../components/PSContainer/PSContainer';
+import EntryCard from '../../components/EntryCard/EntryCard';
 import { useRouteMatch } from 'react-router-dom';
 
 const Entries = (props) => {

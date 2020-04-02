@@ -1,29 +1,19 @@
 import React from 'react';
 import './styles/main.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Pages/Home/Home.jsx';
+import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import NewEntry from './Pages/NewEntry/NewEntry.jsx';
 import Profile from './Pages/Profile/Profile.jsx';
-import Nav from './ui/Nav/Nav.jsx';
+import Login from './Pages/Login/Login.jsx';
+import Register from './Pages/Register/Register.jsx';
+import Nav from './components/Nav/Nav.jsx';
 import Entries from './Pages/Entries/Entries';
-import firebase, { initializeApp } from “firebase”;
-import firebaseConfig from “./Config”;
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
-
-const {
-  user,
-  signOut,
-  signInWithGoogle,
-} = this.props;
+// const {
+//   user,
+//   signOut,
+//   signInWithGoogle,
+// } = this.props;
 
 // const journs = {
 //   1: {
@@ -121,9 +111,11 @@ function App() {
     <Router>
       <div className="App">
           <Switch>
-            <Route path="/" exact render={() => <Home journals={journals}/>} />
+            <Route path="/" exact render={() => <Dashboard journals={journals}/>} />
             <Route path="/newEntry" component={NewEntry} />
             <Route path="/profile" component={Profile} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
             <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
           </Switch>
           <Nav />
@@ -131,8 +123,8 @@ function App() {
     </Router>
   );
 }
-export default withFirebaseAuth({
-  providers,
-  firebaseAppAuth,
-})(App);
-// export default App;
+// export default withFirebaseAuth({
+//   providers,
+//   firebaseAppAuth,
+// })(App);
+export default App;

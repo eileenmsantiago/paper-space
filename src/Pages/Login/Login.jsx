@@ -1,21 +1,34 @@
 import React from 'react';
-import PSContainer from '../../ui/PSContainer/PSContainer';
-import Header from '../../ui/Header/Header';
-import Icon from '../../ui/Icon/Icon';
+import PSContainer from '../../components/PSContainer/PSContainer';
+import Header from '../../components/Header/Header';
+import Icon from '../../components/Icon/Icon';
+import Heading from '../../components/Heading/Heading';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import Text from '../../components/Text/Text';
 
 const Login = (props) => {
     return (
-        <div className="login">
-            <PSContainer>
-                <Icon name="logo"/>
-                <Header
-                    title="Welcome Back"
-                />
-
-                
-            </PSContainer>
-        </div>
-        <h1>Login</h1>
+        <PSContainer>
+            <div className="login">
+                <div className="login__header">
+                    <Header backLink="/" />
+                    <div className="login__header-icon">
+                        <Icon name="logo"/>
+                    </div>
+                    <div className="login__header-heading">
+                        Welcome back
+                    </div>
+                </div>
+                <div className="login__form-container">
+                    <LoginForm />
+                </div>
+                <div className="login__terms-conditions">
+                    <Text size="labels" weight="light" color="grey">
+                        <a href="/login">Forget your password?</a> 
+                    </Text>
+                </div>
+            </div>
+        </PSContainer>
     )
 }
 export default Login;

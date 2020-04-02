@@ -1,8 +1,8 @@
  import React from 'react';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
-// import SearchIcon from '@material-ui/icons/Search';
 import Icon from '../Icon/Icon';
+
 function Header(props) {
 
     const {title, subtitle, backLink} = props;
@@ -20,9 +20,6 @@ function Header(props) {
                         {title}
                     </Heading> 
                 : null}
-                {/* <button type="button" className="close" aria-label="Close">
-                    <SearchIcon />
-                </button> */}
                     <a href={backLink}>
                         <Icon name="back"/>
                     </a>

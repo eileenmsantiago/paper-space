@@ -1,9 +1,9 @@
 import React from 'react';
-import PSContainer from '../../ui/PSContainer/PSContainer';
-import CardCarousel from '../../ui/CardCarousel/CardCarousel';
-import Header from '../../ui/Header/Header';
+import PSContainer from '../../components/PSContainer/PSContainer';
+import CardCarousel from '../../components/CardCarousel/CardCarousel';
+import Header from '../../components/Header/Header';
 
-const Home = (props) => {
+const Dashboard = (props) => {
 
     const {journals} = props;
     let hasEntries = false;
@@ -13,9 +13,9 @@ const Home = (props) => {
         }
     })
     return(
-        <div className="home">
+        <div className="dashboard">
             <PSContainer>
-                <div className="home__wrapper">
+                <div className="dashboard__wrapper">
                     <Header
                         title="Emilie's PaperSpace" 
                         subtitle={hasEntries ? `Here are your past journal collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}>
@@ -27,4 +27,4 @@ const Home = (props) => {
     );
 }
 
-export default Home;
+export default Dashboard;
