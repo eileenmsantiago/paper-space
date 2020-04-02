@@ -5,14 +5,14 @@ import Icon from '../Icon/Icon';
 
 function Header(props) {
 
-    const {title, subtitle, backLink} = props;
+    const {title, subtitle, backLink, search} = props;
 
     return (
         <div className="header">
             <div className="header__title">
-                {backLink ? 
-                    <a href={backLink}>
-                        <Icon name="back"/>
+                {search ? 
+                    <a href={search}>
+                        <Icon name="search"/>
                     </a>
                 : null}
                 {title ?  

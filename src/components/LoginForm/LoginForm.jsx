@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import firebase from "../../config/firebaseConfig";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
+import { useHistory } from 'react-router-dom';
 
 function LoginForm(props) {
 
-    const { history } = props;
+    const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -15,10 +16,12 @@ function LoginForm(props) {
 
     async function onLogin() {
         try {
-            await firebase.login(email, password);
-            history.replace("/dashboard");
-        } catch (err) {
-            alert ("Invalid Login");
+            const login = await firebase.login(email, password);
+            if(login) {
+                history.replace("/dashboard");
+            }
+        } catch(e) {
+            console.log(e);
         }
     }
     

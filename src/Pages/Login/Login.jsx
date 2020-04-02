@@ -16,7 +16,7 @@ const Login = (props) => {
                         <Icon name="logo"/>
                     </div>
                     <div className="login__header-heading">
-                        Welcome back
+                        <Heading level="h1"> Welcome back</Heading>
                     </div>
                 </div>
                 <div className="login__form-container">

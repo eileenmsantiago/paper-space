@@ -12,12 +12,14 @@ const Register = (props) => {
         <PSContainer>
             <div className="register">
                 <div className="register__header">
-                    <Header />
+                    <Header backLink="/" />
                     <div className="register__header-icon">
                         <Icon name="logo"/>
                     </div>
                     <div className="register__header-heading">
-                        Create an account
+                        <Heading level="h1">
+                            Create an account
+                        </Heading>
                     </div>
                 </div>
                 <RegisterForm />

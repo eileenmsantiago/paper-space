@@ -112,6 +112,7 @@ function App() {
       <div className="App">
           <Switch>
             <Route path="/" exact render={() => <Dashboard journals={journals}/>} />
+            <Route path="/dashboard" render={() => <Dashboard journals={journals}/>} />
             <Route path="/newEntry" component={NewEntry} />
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />

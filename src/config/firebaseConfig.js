@@ -24,6 +24,20 @@ class Firebase {
 	// Login
 	login(email, password) {
 		return this.auth.signInWithEmailAndPassword(email, password);
+		
+		//TODO: persist auth in local or session storage;
+		// return this.auth
+		// 	.setPersistence('session')
+  		// 	.then(function() {
+		// 		console.log('set');
+		// 		return this.auth.signInWithEmailAndPassword(email, password);
+		// 	})
+		// .catch(function(error) {
+		// 	// Handle Errors here.
+		// 	var errorCode = error.code;
+		// 	var errorMessage = error.message;
+		// });
+		// return this.auth.signInWithEmailAndPassword(email, password);
 	}
 
 	// Logout
