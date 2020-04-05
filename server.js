@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose'); 
 const bodyParser = require('body-parser');
+const cors = require("cors");
 
 const app = express(); 
 
 // middleware  
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -17,6 +19,12 @@ mongoose
     .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('PaperSpaceDB Connected...'))
     .catch(err => console.log(err));
+
+//import the route
+const entriesRouter = require("./routes/entries")
+
+//connecting the backend routing
+app.use("/entries", entriesRouter);
 
 const port = process.env.Port || 5001; 
 
