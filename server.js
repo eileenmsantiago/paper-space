@@ -20,4 +20,7 @@ mongoose
 
 const port = process.env.Port || 5001; 
 
+//connecting the backend routing
+app.use("/entries", entriesRouter);
+
 app.listen(port, () => console.log(`Server started on port ${port} `));
