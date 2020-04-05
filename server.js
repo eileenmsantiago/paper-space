@@ -18,9 +18,12 @@ mongoose
     .then(() => console.log('PaperSpaceDB Connected...'))
     .catch(err => console.log(err));
 
-const port = process.env.Port || 5001; 
+//import the route
+const entriesRouter = require("./routes/entries")
 
 //connecting the backend routing
 app.use("/entries", entriesRouter);
+
+const port = process.env.Port || 5001; 
 
 app.listen(port, () => console.log(`Server started on port ${port} `));
