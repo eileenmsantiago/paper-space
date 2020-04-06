@@ -15,14 +15,14 @@ const Card = (props) => {
                         {date}
                     </Text>
                 </div>
-                <div className="p__sub-heading" id="heading-detail-date">
+                <div className="ps-card__sub-heading" id="heading-detail-date">
                     <Text size="small" weight="regular" color="light-black">
                         {detail}
                     </Text>
                 </div>
                 <div className="ps-card__entry-count" id="entry-count">
                     <Text size="small" weight="regular" color="light-black">
-                        {hasEntries ? `${entries.length} entries` : 'No journal entry'}
+                        {hasEntries ? `${entries.length} entries` : 'No entry entry'}
                         {/* {props.cardEntries} */}
                     </Text>
                 </div>
@@ -30,7 +30,6 @@ const Card = (props) => {
         </div>
     )
 }
-
 
 Card.defaultProps = {
     entries: []

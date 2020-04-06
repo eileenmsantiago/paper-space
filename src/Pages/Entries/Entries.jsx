@@ -6,17 +6,16 @@ import { useRouteMatch } from 'react-router-dom';
 
 const Entries = (props) => {
     const match = useRouteMatch();
-    const jounralId = match.params.journalId;
-    const {journals} = props;
-    const entries = journals[jounralId-1].entries;
+    const journalId = match.params.journalId;
+    const { journals } = props;
+    const entries = journals[journalId-1].entries;
     return(
         <PSContainer>
-            <Header backLink="/">
-            </Header>
-             {entries.map(entry => {
-                return (
-                    <EntryCard date={entry.date} time={entry.time} brief={entry.brief}/>
-                )
+            <Header backLink="/"></Header>
+                {entries.map(entry => {
+                    return (
+                        <EntryCard date={entry.date} time={entry.time} brief={entry.brief}/>
+                    )
             })}
         </PSContainer>
     )

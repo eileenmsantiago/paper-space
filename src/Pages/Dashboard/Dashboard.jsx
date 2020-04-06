@@ -2,19 +2,19 @@ import React from 'react';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import CardCarousel from '../../components/CardCarousel/CardCarousel';
 import Header from '../../components/Header/Header';
-import firebase from '../../config/firebaseConfig'
+import firebase from '../../config/firebaseConfig';
 import { useHistory } from 'react-router-dom';
 
 const Dashboard = (props) => {
     const history = useHistory();
     const user = firebase.isLoggedIn();
     if(!user) {
-        history.push('/login');
+        // history.push('/login');
     }
-    const {journals} = props;
+    const {entries} = props;
     let hasEntries = false;
-    journals.forEach(journal => {
-        if(journal.entries.length > 0) {
+    entries.forEach(entry => {
+        if(entry.entries.length > 0) {
             hasEntries = true;
         }
     })
@@ -23,12 +23,13 @@ const Dashboard = (props) => {
             <PSContainer>
                 <div className="dashboard__wrapper">
                     <Header
-                        title={`${user}'s PaperSpace`}
-                        subtitle={hasEntries ? `Here are your past journal collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}>
+                        // title={`${user}'s PaperSpace`}
+                        title={`${firebase.isLoggedIn()}'s PaperSpace`}
+                        subtitle={hasEntries ? `Here are your past entry collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}>
                     </Header>
                 </div>
             </PSContainer>
-            <CardCarousel journals={journals}/>
+            <CardCarousel entries={entries}/>
         </div>
     );
 }

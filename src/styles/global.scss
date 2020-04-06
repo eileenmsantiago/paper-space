@@ -9,6 +9,17 @@ ul {
     padding-inline-start: 0px;
 }
 
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 100%;
+    max-width: 800px;
+    // display: flex;
+}
+
 @media (max-width: 768px) {
     .col-md-6 {
         flex: 0 0 100%;

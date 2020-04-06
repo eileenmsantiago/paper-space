@@ -8,31 +8,28 @@ const NewEntry = (props) => {
     const {closeLink} = props;
     return (
         <PSContainer>
-            <div className="journal">
-                <div className="journal__wrapper">
-                    <div className="journal__header">
+            <div className="entry">
+                <div className="entry__wrapper">
+                    <div className="entry__header">
                         <a href="/"><img src="assets/icon-prompts-cards.svg"/></a>
-                        <div className="journal__header-heading">
+                        <div className="entry__header-heading">
                             <Text size="small" weight="light" color="light-black">USE PROMPTS</Text>
                         </div>
-                        <a className="journal__header-icon" href={closeLink}>
+                        <a className="entry__header-icon" href={closeLink}>
                             <Icon name="close"/>
                         </a>
                         {/* <button type="button" className="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button> */}
                     </div>
-                    <div className="journal__body">
-                        <div className="journal__body-header">
+                    <div className="entry__body">
+                        <div className="entry__body-header">
                             <Text size="labels" weight="semi" color="light-grey">
-                                {/* {props.journalDate} */}
+                                {/* {props.entryDate} */}
                                 2nd Apr, 2020
                             </Text>
                         </div>
-                        <div className="journal__body-content">
-                            {/* <Text size="regular" color="light-grey2">
-                                Start Writing...
-                            </Text>  */}
+                        <div className="entry__body-content">
                             <TextArea></TextArea>
                         </div>
                     </div>

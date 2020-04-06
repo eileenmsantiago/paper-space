@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/main.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { LastLocationProvider } from 'react-router-last-location';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import NewEntry from './Pages/NewEntry/NewEntry.jsx';
 import Profile from './Pages/Profile/Profile.jsx';
@@ -51,7 +52,7 @@ const journals = [
   {
     id: 1,
     dateRange: "Jan 1-7",
-    detail: "journal 1",
+    detail: "entry 1",
     entries: [
       {
         date:"20th Jan, 2020",
@@ -68,7 +69,7 @@ const journals = [
   {
     id: 2,
     dateRange: "Jan 8-15",
-    detail: "journal 2",
+    detail: "entry 2",
     entries: [
       {
         date:"20th Jan, 2020",
@@ -94,7 +95,7 @@ const journals = [
   {
     id: 3,
     dateRange: "Jan 16-21",
-    detail: "journal 3",
+    detail: "entry 3",
     entries: [
       {
         date:"20th Jan, 2020",
@@ -109,18 +110,20 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-          <Switch>
-            <Route path="/" exact render={() => <Dashboard journals={journals}/>} />
-            <Route path="/dashboard" render={() => <Dashboard journals={journals}/>} />
-            <Route path="/newEntry" component={NewEntry} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
-          </Switch>
-          <Nav />
-      </div>
+      <LastLocationProvider>
+        <div className="App">
+            <Switch>
+              <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
+              <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
+              <Route path="/newEntry" component={NewEntry} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
+            </Switch>
+            <Nav />
+        </div>
+      </LastLocationProvider>
     </Router>
   );
 }

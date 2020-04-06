@@ -1,4 +1,4 @@
-.journal {
+.entry {
     &__header {
         display: inline-flex;
         align-items: center;
@@ -17,4 +17,9 @@
         }
     }
 }
-
+textarea {
+    overflow: auto;
+    resize: vertical;
+    resize: none;
+    border-width: 0
+}

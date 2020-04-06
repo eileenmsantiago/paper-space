@@ -4,7 +4,7 @@ import 'swiper/css/swiper.css';
 import Card from '../Card/Card';
 
 const CardCarousel = (props) => {
-    const {journals} = props;
+    const { entries } = props;
     const params = {
         spaceBetween: 30,
         slidesPerView: 'auto',
@@ -12,16 +12,16 @@ const CardCarousel = (props) => {
     };
     return (
         <div className="card-carousel">
-             <Swiper {...params}>
-                {journals.map((journal) => {
+            <Swiper {...params}>
+                {entries.map((entry) => {
                     return (
                         <div>
-                            <a href={`/entries/${journal.id}`}>
+                            <a href={`/entries/${entry.id}`}>
                                 <Card
                                     colorHex="#fff"
-                                    date={journal.dateRange}
-                                    detail={journal.detail}
-                                    entries={journal.entries}
+                                    date={entry.dateRange}
+                                    detail={entry.detail}
+                                    entries={entry.entries}
                                 />
                             </a>
                         </div>

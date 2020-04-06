@@ -1,39 +1,4 @@
-.form-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    ::placeholder {
-        color: #DADADA;
-    }
-    width: 355px;
-    a {
-        color: $color-secondary-purple;
-    }
-
-    &__button {
-        margin-bottom: 2rem;
-    }
-}
-
-input {
-    width: 335px;
-    height: 50px;
-    background: #FFFFFF;
-    border: none;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 
-                0px 0px 2px rgba(0, 0, 0, 0.06), 
-                0px 4px 8px rgba(0, 0, 0, 0.04);
-    margin-bottom: 1.5rem;
-
-    &:focus {
-        outline: 0;
-        outline-offset: 0;
-        border: 1px solid $color-primary-peach;
-        box-shadow: none;
-    }
-}
+// *** form-container CSS in LoginForm.scss ***
 
 .terms-conditions {
     margin-bottom: 1.5rem;

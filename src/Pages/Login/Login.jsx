@@ -22,11 +22,6 @@ const Login = (props) => {
                 <div className="login__form-container">
                     <LoginForm />
                 </div>
-                <div className="login__terms-conditions">
-                    <Text size="labels" weight="light" color="grey">
-                        <a href="/login">Forget your password?</a> 
-                    </Text>
-                </div>
             </div>
         </PSContainer>
     )

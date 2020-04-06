@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import firebase from "../../config/firebaseConfig";
 import firebase from "../../config/firebaseConfig";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
@@ -26,34 +27,38 @@ function LoginForm(props) {
     }
     
     return (
-        <div className="form-container">
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    autoComplete="off"
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    autoComplete="off"
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button 
-                    className="button" 
-                    type="submit" 
-                    onClick={onLogin}
-                >
-					Sign in
-                </Button>
-                <div className="second-cta"> 
-                    <Text size ="tab" color="light-black">
-                        New user? <a href="/register" onClick={onLogin}> <strong>Create an account</strong></a>
-                    </Text>
-                </div>
-            </form>
-        </div>
+        <form className="form-container" onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Email"
+                autoComplete="off"
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+                type="password"
+                placeholder="Password"
+                autoComplete="off"
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button 
+                className="button" 
+                type="submit" 
+                onClick={onLogin}
+            >
+                Sign in
+            </Button>
+            <div className="forgot-password">
+                <Text size="labels" weight="light" color="grey">
+                    <a href="/login">Forget your password?</a> 
+                </Text>
+            </div>
+            <div className="second-cta"> 
+                <Text size ="tab" color="light-black">
+                    New user? <a href="/register" onClick={onLogin}> <strong>Create an account</strong></a>
+                </Text>
+            </div>
+        </form>
     );
 }
 export default LoginForm;
+
