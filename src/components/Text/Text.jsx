@@ -2,7 +2,7 @@ import React from 'react'
 
 const Text = (props) => {
 
-    const { children, size, weight, color } = props;
+    const { children, size, weight, color, className } = props;
     return <span
     
     className={`
@@ -10,6 +10,7 @@ const Text = (props) => {
         body-text--size-${size}
         body-text--weight-${weight}
         body-text--color-${color}
+        ${className ? className : ""}
     `}>
         {children}
     </span>;

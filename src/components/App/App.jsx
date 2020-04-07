@@ -1,14 +1,13 @@
 import React from 'react';
-import './styles/main.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LastLocationProvider } from 'react-router-last-location';
-import Dashboard from './Pages/Dashboard/Dashboard.jsx';
-import NewEntry from './Pages/NewEntry/NewEntry.jsx';
-import Profile from './Pages/Profile/Profile.jsx';
-import Login from './Pages/Login/Login.jsx';
-import Register from './Pages/Register/Register.jsx';
-import Nav from './components/Nav/Nav.jsx';
-import Entries from './Pages/Entries/Entries';
+import Dashboard from '../../Pages/Dashboard/Dashboard.jsx';
+import NewEntry from '../../Pages/NewEntry/NewEntry.jsx';
+import Profile from '../../Pages/Profile/Profile.jsx';
+import Login from '../../Pages/Login/Login.jsx';
+import Register from '../../Pages/Register/Register.jsx';
+import Nav from '../Nav/Nav.jsx';
+import Entries from '../../Pages/Entries/Entries';
 
 // const {
 //   user,
@@ -111,17 +110,21 @@ function App() {
   return (
     <Router>
       <LastLocationProvider>
-        <div className="App">
-            <Switch>
-              <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
-              <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
-              <Route path="/newEntry" component={NewEntry} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
-            </Switch>
+        <div className="app">
+          <div className="app__content">
+            <main>
+              <Switch>
+                <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
+                <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
+                <Route path="/newEntry" component={NewEntry} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
+              </Switch>
+            </main>
             <Nav />
+          </div>
         </div>
       </LastLocationProvider>
     </Router>

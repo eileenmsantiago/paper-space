@@ -4,13 +4,19 @@
         color: #DADADA;
     }
     &__container {
-        width: 340px;
+        width: 550px;
+        height: 550px;
         font-size: 16px;
         line-height: 20px;
         letter-spacing: -0.24px;
 
         &:focus {
             outline: none;
+        }
+    }
+    @media (max-width: 468px) {
+        &__container {
+            width: 340px;
         }
     }
 }
