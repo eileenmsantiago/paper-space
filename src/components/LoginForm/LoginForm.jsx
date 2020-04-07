@@ -41,7 +41,7 @@ function LoginForm(props) {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <Button 
-                className="button" 
+                className="Button" 
                 type="submit" 
                 onClick={onLogin}
             >

@@ -14,9 +14,9 @@ function Button(props) {
     }
 
     return (
-        <button className={buttonClass}>
+        <Button className={buttonClass}>
             {text}
-        </button>
+        </Button>
     )
 }
 

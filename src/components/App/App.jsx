@@ -4,6 +4,7 @@ import { LastLocationProvider } from 'react-router-last-location';
 import Dashboard from '../../Pages/Dashboard/Dashboard.jsx';
 import NewEntry from '../../Pages/NewEntry/NewEntry.jsx';
 import Profile from '../../Pages/Profile/Profile.jsx';
+import Landing from '../../Pages/Landing/Landing.jsx';
 import Login from '../../Pages/Login/Login.jsx';
 import Register from '../../Pages/Register/Register.jsx';
 import Nav from '../Nav/Nav.jsx';
@@ -118,6 +119,7 @@ function App() {
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
                 <Route path="/newEntry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/paperspace" component={Landing} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />

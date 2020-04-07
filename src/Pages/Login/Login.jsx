@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
 import Heading from '../../components/Heading/Heading';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import Text from '../../components/Text/Text';
 
 const Login = (props) => {
     return (
