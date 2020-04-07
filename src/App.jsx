@@ -43,6 +43,18 @@ import Entries from './Pages/Entries/Entries';
 //     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
 //   }
 // }
+function className(brief,tone_id){
+  if(brief.indexOf(tone_id) !== -1){
+    return tone_id;
+  }else{
+    return '';
+  }
+}
+
+journals.forEach((item)=>{
+  className(item.entries.brief,tone_id)
+})
+
 const journals = [
   {
     id: 1,
@@ -50,11 +62,15 @@ const journals = [
     detail: "journal 1",
     entries: [
       {
+        id:'1',
+        // score:0.3,
+        // tone_id:'sadness',
         date:"20th Jan, 2020",
         time:"10:15pm",
         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
       },
       {
+        id:'2',
         date:"20th Jan, 2020",
         time:"10:15pm",
         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
