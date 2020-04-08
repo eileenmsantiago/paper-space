@@ -119,7 +119,7 @@ function App() {
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
                 <Route path="/newEntry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/paperspace" component={Landing} />
+                <Route path="/landing" component={Landing} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />

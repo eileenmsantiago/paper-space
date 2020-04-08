@@ -1,12 +1,19 @@
 .profile-info {
-
     &__heading {
         margin-bottom: 1.15rem;
     }
 
     &__container {
         margin-bottom: 1.75rem;
+    }
 
+    &__password {
+        background: #FFFFFF;
+        border: none;
+        padding: 0px;
+        border-radius: 0px;
+        box-shadow: unset;
+        margin-bottom: 0rem
     }
 
     &__icon {

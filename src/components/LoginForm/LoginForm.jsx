@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import firebase from "../../config/firebaseConfig";
 import firebase from "../../config/firebaseConfig";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
@@ -7,22 +6,35 @@ import { useHistory } from 'react-router-dom';
 
 function LoginForm(props) {
 
-    const history = useHistory();
+    const { history } = props;
+    // const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!email) {
+            setError("Email is required");
+            return;
+        }
+        if (!password) {
+            setError("Password is required");
+            return;
+        }
+        onLogin();
     };
 
     async function onLogin() {
+        console.log('Logging into User`s PaperSpace... ');
         try {
             const login = await firebase.login(email, password);
             if(login) {
                 history.replace("/dashboard");
             }
-        } catch(e) {
-            console.log(e);
+        } catch(err) {
+            setError(err.message);
+            console.log(err.message);
         }
     }
     
@@ -49,8 +61,11 @@ function LoginForm(props) {
             </Button>
             <div className="forgot-password">
                 <Text size="labels" weight="light" color="grey">
-                    <a href="/login">Forget your password?</a> 
+                    <a href="/login">Forgot your password?</a> 
                 </Text>
+            </div>
+            <div className="error">
+                <Text size ="tab" color="error">{error}</Text>
             </div>
             <div className="second-cta"> 
                 <Text size ="tab" color="light-black">

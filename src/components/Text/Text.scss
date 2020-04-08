@@ -75,5 +75,8 @@
                 color:$color-neutral-dark-white;
             }
         }
+        &-error {
+            color: $color-error;
+        }
     }
 }

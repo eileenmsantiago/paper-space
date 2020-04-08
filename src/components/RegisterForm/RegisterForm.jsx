@@ -9,17 +9,32 @@ function RegisterForm(props) {
     const [name, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!name) {
+            setError("Name is required");
+            return;
+        }
+        if (!email) {
+            setError("Invalid Email input");
+            return;
+        }
+        if (!password) {
+            setError("Invalid password input");
+            return;
+        }
         onRegister();
     };
 
     async function onRegister() {
+        console.log('Registering new PaperSpace User...');
         try {
             await firebase.register(name, email, password);
             history.replace("/dashboard");
         } catch (err) {
+            setError(err.message);
             console.log(err.message);
         }
     }
@@ -54,9 +69,10 @@ function RegisterForm(props) {
                     By continuing, you agree to Paperspace’s <a href="/login">Terms & Conditions</a> and <a href="/login">Private Policy </a> 
                 </Text>
             </div>
-            <Button className="form-container__button" type="submit" onClick={onRegister}>
+            <Button className="form-container__button" type="submit">
                 Register
             </Button>
+            <Text size ="tab" color="error">{error}</Text>
             <div className="second-cta"> 
                 <Text size ="tab" color="light-black">
                     Already have an account? <a href="/login"> <strong>Sign in</strong></a>
