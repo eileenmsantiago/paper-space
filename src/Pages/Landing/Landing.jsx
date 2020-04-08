@@ -8,13 +8,15 @@ const Landing = (props) => {
         <PSContainer>
             <div className="landing">
                 <div className="landing__header">
-                    <Heading level="h1"> LANDING </Heading>
+                    <img src = "psLogo.svg"/>
+                    <Heading level="h1"> LANDING INFO </Heading>
                 </div>
                 <div className="landing__content">
                     <img src="/assets/Images/Landing-1.svg" alt="colorful illustrations"></img>
                 </div>
                 <div className="landing__cta">
-                    <Button></Button>
+                    <Button>CREATE AN ACCOUNT</Button>
+                     <Button>SIGN IN</Button>
                 </div>
             </div>
         </PSContainer>
