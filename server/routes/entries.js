@@ -1,7 +1,7 @@
 //import router dependency
 const router = require("express").Router();
 //import our model(which is our mongodb collection and schema)
-let Entries = require("../../models/Entries");
+let Entries = require("../models/entries.model");
 
 //Get data from the database i.e get entries stored in the database
 router.route("/").get((req, res) => {
@@ -16,17 +16,19 @@ router.route("/add").post((req, res) => {
     const entryContent = req.body.entryContent;
     const mood = req.body.mood
     const prompt = req.body.prompt
+    const date = Date.parse(req.body.date);
 
     const newEntries = new Entries({
         entryContent,
         mood,
-        promp
+        prompt,
+        date
     });
     // saving the new entries into the database
     newEntries.save()
         .then(() =>
             res.json("Entry saved!"))
-        .catch(err => res.status(404).json({success: false}));
+        .catch(err => res.status(404).json(`Error: ${err}`));
 });
 
 //find a specific entry from the database
@@ -43,7 +45,7 @@ router.route('/update/:id').post((req, res) => {
       entries.entryContent = req.body.entryContent;
       entries.mood = req.body.mood;
       entries.prompt = Number(req.body.prompt);
-        entries.date = Date.parse(req.body.date);
+      entries.date = Date.parse(req.body.date);
         
         //update part
 
