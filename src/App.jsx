@@ -10,50 +10,33 @@ import Entries from './Pages/Entries/Entries';
 // import firebaseConfig from “./Config”;
 // library.add(faSearch)
 
+import {toneAnalyzer} from './tone-test.js';
 
-// const journs = {
-//   1: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   2: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   3: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   4: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   5: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   6: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   }
-// }
-function className(brief,tone_id){
-  if(brief.indexOf(tone_id) !== -1){
-    return tone_id;
-  }else{
-    return '';
-  }
+let arr=[]
+
+journals.forEach((item,index)=>{
+  item.entries.forEach((item,index)=>{
+      arr.push(getVal(item.brief)) 
+  })
+})
+
+function getVal(str){
+    const toneParams = {
+    toneInput: { 'brief': str },
+    content_type: 'application/json',
+    };
+//Use Tone Analyzer varibale to analyze the text
+    toneAnalyzer.tone(toneParams)
+    .then(toneAnalysis => {
+//The tone of the text, as determined by watson
+    return JSON.stringify(toneAnalysis, null, 2);
+    })
+    .catch(err => { 
+    console.log('error:', err);
+    });
 }
 
-journals.forEach((item)=>{
-  className(item.entries.brief,tone_id)
-})
+
 
 const journals = [
   {
@@ -67,7 +50,7 @@ const journals = [
         // tone_id:'sadness',
         date:"20th Jan, 2020",
         time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+        brief:"Coding is too hard."
       },
       {
         id:'2',
@@ -116,6 +99,17 @@ const journals = [
     ]
   }
 ]
+// var api = require('./tone.js')
+
+// journals.forEach((items,index)=> {
+//   items.entries.forEach((item,idx)=> {
+//     api(itm.brief)
+//   }) 
+// })
+
+
+
+
 
 function App() {
   return (

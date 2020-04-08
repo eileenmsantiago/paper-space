@@ -1,3 +1,4 @@
+
 const ToneAnalyzerV3 = require('ibm-watson/tone-analyzer/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
@@ -11,7 +12,7 @@ const toneAnalyzer = new ToneAnalyzerV3({
 });
 
 //Text that to be analyzed.
-const text = "Coding is too hard. This program is too hard.";
+const text = "Coding is too hard.";
 
 //The format that the tone analyzer needs.
 const toneParams = {

@@ -8,6 +8,7 @@ const Card = (props) => {
     const hasEntries = entries.length > 0 ? true : false;
 
     return (
+        // <div className={`ps-card c ${this.state.result.document_tone.tones.tone_id}_backGround`}>
         <div className="ps-card" style={{background: colorHex}}>
             <div className="ps-card__wrapper">
                 <div className="ps-card__heading" id="heading-date">

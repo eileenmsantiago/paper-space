@@ -6,12 +6,19 @@
    
     .card-colors {
         filter: blur(20px);
+        .sadness_backGround {
+            top: 110px;
+            left: 50px;
+            width: 240px;
+            height: 200px;
+            background:$color-brand-light-sky;
+        }
     }
 
     .c {
         animation: fade-scale 3s;  
     }
-
+    
     
     &__wrapper {
         padding: 1.75rem 1.25rem;
