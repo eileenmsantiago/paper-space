@@ -13,9 +13,9 @@ const Entries = (props) => {
         <PSContainer>
             <Header backLink="/">
             </Header>
-             {entries.map(entry => {
+             {entries.map((entry,i )=> {
                 return (
-                    <EntryCard date={entry.date} time={entry.time} brief={entry.brief}/>
+                    <EntryCard key={i} date={entry.date} time={entry.time} brief={entry.brief}/>
                 )
             })}
         </PSContainer>

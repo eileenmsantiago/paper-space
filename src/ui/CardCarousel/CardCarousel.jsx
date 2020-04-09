@@ -13,9 +13,9 @@ const CardCarousel = (props) => {
     return (
         <div className="card-carousel">
              <Swiper {...params}>
-                {journals.map((journal) => {
+                {journals.map((journal,i) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <a href={`/entries/${journal.id}`}>
                                 <Card
                                     colorHex="#fff"

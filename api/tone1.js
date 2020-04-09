@@ -36,6 +36,8 @@ const text = "Coding is too hard.";
 
 
 app.get('/tone', (req, res) => {res.send(text)})
+app.get('/tone', (req, res) => {res.send(text)})
+
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 

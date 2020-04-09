@@ -42,4 +42,28 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+// configure database 
+const db = 'mongodb+srv://paperspace:paperspace2020@cluster0-axzl6.mongodb.net/test?retryWrites=true&w=majority';
+
+// connect to Mongo 
+mongoose
+    .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => console.log('PaperSpaceDB Connected...'))
+    .catch(err => console.log(err));
+
+
 module.exports = app;
+
+
+
+
+
+// // configure database 
+// const db = 'mongodb+srv://paperspace:paperspace2020@cluster0-axzl6.mongodb.net/test?retryWrites=true&w=majority';
+
+// // connect to Mongo 
+// mongoose
+//     .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
+//     .then(() => console.log('PaperSpaceDB Connected...'))
+//     .catch(err => console.log(err));

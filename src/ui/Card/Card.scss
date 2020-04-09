@@ -5,20 +5,70 @@
     border-radius: 20px;
    
     .card-colors {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         filter: blur(20px);
-        .sadness_backGround {
+        
+        .c {
+            position: absolute;
+            border-radius: 100%;
+            animation: fade-scale 3s;  
+        }
+        
+        .c-sadness {
             top: 110px;
             left: 50px;
             width: 240px;
             height: 200px;
             background:$color-brand-light-sky;
         }
+        .c-anger{
+            top: -60px;
+            left: 70px;
+            width: 180px;
+            height: 220px;
+            background: $color-brand-light-orange;
+          }
+        .c-fear {
+            top: 70px;
+            left: -20px;
+            width: 180px;
+            height: 180px;
+            background: $color-brand-light-green;
+        }
+        .c-joy {
+            top: 110px;
+            left: 50px;
+            width: 240px;
+            height: 200px;
+            background:$color-brand-light-yellow;
+        }
+        .c-analytical {
+            top: 70px;
+            left: -20px;
+            width: 180px;
+            height: 180px;
+            background: $color-brand-light-blue;
+        }
+        .c-confident {
+            top: 70px;
+            left: -20px;
+            width: 180px;
+            height: 180px;
+            background: $color-brand-light-purple;
+        }
+        .c-tentative {
+            top: 70px;
+            left: -20px;
+            width: 180px;
+            height: 180px;
+            background: $color-brand-light-teal;
+        }
     }
 
-    .c {
-        animation: fade-scale 3s;  
-    }
-    
     
     &__wrapper {
         padding: 1.75rem 1.25rem;
