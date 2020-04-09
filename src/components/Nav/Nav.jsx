@@ -21,7 +21,7 @@ const Nav = (props) => {
                     </li>
                     <li>
                         <NavLink 
-                            to="/newEntry"
+                            to="/entry"
                             className="nav__link"
                             activeClassName="nav__link--active"
                         >

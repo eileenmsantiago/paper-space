@@ -2,9 +2,9 @@ import React from 'react';
 import Text from '../Text/Text';
 
 const EntryCard = (props) => {
-    const {date, time, brief} = props;
+    const {date, time, brief, id} = props;
     return (
-        <div className="entry-card">
+        <a className="entry-card" href={`/entry/${id}`}>
             <div className="entry-card__highlight">
             </div>
             <div className="entry-card__wrapper">
@@ -17,10 +17,10 @@ const EntryCard = (props) => {
                     </div>
                 </div>
                 <div className="entries-list__body">
-                    <Text size="tab" color="grey2">{brief}</Text>
+                    <Text size="tab" color="grey2">{brief.substring(0, 100)}</Text>
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 export default EntryCard;

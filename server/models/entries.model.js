@@ -12,8 +12,7 @@ const EntriesSchema = new Schema({
         required: true 
     },
     prompt: { 
-        type: String, 
-        required: true 
+        type: String
     }
     // ,
     // date: {

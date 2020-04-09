@@ -9,6 +9,7 @@ import Login from '../../Pages/Login/Login.jsx';
 import Register from '../../Pages/Register/Register.jsx';
 import Nav from '../Nav/Nav.jsx';
 import Entries from '../../Pages/Entries/Entries';
+import Entry from '../../Pages/Entry/Entry.jsx';
 
 // const {
 //   user,
@@ -117,7 +118,8 @@ function App() {
               <Switch>
                 <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
-                <Route path="/newEntry" component={NewEntry} />
+                <Route path="/entry/:entryId" component={Entry} />
+                <Route path="/entry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/landing" component={Landing} />
                 <Route path="/login" component={Login} />

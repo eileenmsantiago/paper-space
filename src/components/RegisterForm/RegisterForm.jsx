@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import firebase from "../../config/firebaseConfig";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
@@ -25,6 +26,10 @@ function RegisterForm(props) {
             setError("Invalid password input");
             return;
         }
+
+        // const user = {
+        //     username: this.state.username,
+        // }
         onRegister();
     };
 
@@ -37,8 +42,16 @@ function RegisterForm(props) {
             setError(err.message);
             console.log(err.message);
         }
+
+        // axios.post('http://localhost:5000/users/add', user)
+        //     .then(res => console.log(res.data));
+        
+        // this.setState({
+        //     username: ''
+        // })
     }
     
+
     return (
         <form className="form-container" onSubmit={handleSubmit}>
             <input
@@ -50,7 +63,6 @@ function RegisterForm(props) {
                 onChange={(e) => setUsername(e.target.value)}
             />
             <input
-
                 type="text"
                 placeholder="Email"
                 value={email}

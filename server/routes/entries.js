@@ -13,21 +13,22 @@ router.route("/").get((req, res) => {
 
 // Add/insert into the database i.e add a new entry to the database
 router.route("/add").post((req, res) => {
+    console.log(req.body);
     const entryContent = req.body.entryContent;
     const mood = req.body.mood
     const prompt = req.body.prompt
-    const date = Date.parse(req.body.date);
+    // const date = Date.parse(req.body.date);
 
     const newEntries = new Entries({
         entryContent,
         mood,
-        prompt,
-        date
+        prompt
     });
     // saving the new entries into the database
     newEntries.save()
-        .then(() =>
-            res.json("Entry saved!"))
+        .then(savedEntry => {
+            res.status(200).json(savedEntry)
+        })
         .catch(err => res.status(404).json(`Error: ${err}`));
 });
 
@@ -39,13 +40,13 @@ router.route('/:id').get((req, res) => {
 });
 
 //edit a specific entry from the database and update it
-router.route('/update/:id').post((req, res) => {
+router.route('/update/:id').put((req, res) => {
   Entries.findById(req.params.id)
     .then(entries => {
       entries.entryContent = req.body.entryContent;
       entries.mood = req.body.mood;
-      entries.prompt = Number(req.body.prompt);
-      entries.date = Date.parse(req.body.date);
+      entries.prompt = req.body.prompt;
+      // entries.date = Date.parse(req.body.date);
         
         //update part
 

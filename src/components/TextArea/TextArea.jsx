@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 
 const TextArea = (props) => {
-
-    const [value, setValue] = useState('');
-
-    console.log(value);
-    
+    const {value, onChange} = props;
     return (
         <div className="textArea">
             <div className="textArea__wrapper">
@@ -15,9 +11,7 @@ const TextArea = (props) => {
                         placeholder="Start Writing..."
                         cols="100"
                         value={value}
-                        onChange={(e) => {
-                            setValue(e.target.value)
-                        }}
+                        onChange={onChange}
                         >
                     </textarea>
                 </form>
