@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 const CardCarousel = (props) => {
     const {journals} = props;
     const params = {
-        spaceBetween: 30,
+        spaceBetween: 0,
         slidesPerView: 'auto',
         slidesOffsetBefore: 20
     };
@@ -17,12 +17,7 @@ const CardCarousel = (props) => {
                     return (
                         <div key={i}>
                             <a href={`/entries/${journal.id}`}>
-                                <Card
-                                    colorHex="#fff"
-                                    date={journal.dateRange}
-                                    detail={journal.detail}
-                                    entries={journal.entries}
-                                />
+                                <Card/>
                             </a>
                         </div>
                     )

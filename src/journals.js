@@ -10,7 +10,7 @@ const journals = [
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
-          mood:"sadness",
+          mood:"joy",
         },
         {
           id:'2',
