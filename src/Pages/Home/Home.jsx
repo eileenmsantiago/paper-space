@@ -1,6 +1,6 @@
 import React from 'react';
 import PSContainer from '../../ui/PSContainer/PSContainer';
-import CardCarousel from '../../ui/CardCarousel/CardCarousel';
+import CardCarousel from '../../ui/Card/Card';
 import Header from '../../ui/Header/Header';
 
 const Home = (props) => {
