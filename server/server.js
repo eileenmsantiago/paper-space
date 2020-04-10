@@ -26,8 +26,6 @@ mongoose
     .then(() => console.log('PaperSpaceDB Connected...'))
     .catch(err => console.log(err));
 
-// app.use('./routes/api/entries', entriesRouter);
-
 //connecting the backend routing
 app.use("/entries", entriesRouter);
 app.use("/users", usersRouter);

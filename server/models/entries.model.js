@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const EntriesSchema = new Schema({
-    entryContent: {
+    content: {
         type: String, 
         required: true 
     },
@@ -13,6 +13,9 @@ const EntriesSchema = new Schema({
     },
     prompt: { 
         type: String
+    },
+    tone: {
+        type: Array
     }
     // ,
     // date: {

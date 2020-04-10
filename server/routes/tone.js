@@ -11,19 +11,39 @@ const toneAnalyzer = new ToneAnalyzerV3({
 });
 
 //Text that to be analyzed.
-const text = "Coding is too hard. This program is too hard.";
+// const text = "Coding is too hard. This program is too hard.";
 
-//The format that the tone analyzer needs.
-const toneParams = {
-    toneInput: { 'text': text },
+const analyzeTone = (text) => {
+
+  const params = {
     content_type: 'application/json',
-    };
-//Use Tone Analyzer varibale to analyze the text
-    toneAnalyzer.tone(toneParams)
-    .then(toneAnalysis => {
-//The tone of the text, as determined by watson
-    console.log(JSON.stringify(toneAnalysis, null, 2));
-    })
-    .catch(err => {
+    toneInput: {
+      text: text 
+    },
+  };
+
+  return toneAnalyzer.tone(params).then(toneAnalysis => {
+    // return toneAnalysis[0].result.document_tone.tones;
+    return toneAnalysis[0].result.document_tone.tones.tone_id;  
+    console.log(toneAnalysis[0].result.document_tone.tones.tone_id);
+  })
+  .catch(err => {
     console.log('error:', err);
-    });
+  }); 
+};
+
+module.exports = analyzeTone;
+// //The format that the tone analyzer needs.
+// const toneParams = {
+//     toneInput: { 'text': text },
+//     content_type: 'application/json',
+//     };
+// //Use Tone Analyzer varibale to analyze the text
+//     toneAnalyzer.tone(toneParams)
+//     .then(toneAnalysis => {
+// //The tone of the text, as determined by watson
+//     console.log(JSON.stringify(toneAnalysis, null, 2));
+//     })
+//     .catch(err => {
+//     console.log('error:', err);
+//     });

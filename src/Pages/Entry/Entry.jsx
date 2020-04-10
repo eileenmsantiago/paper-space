@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import EntryForm from '../../components/EntryForm/EntryForm';
 import { useRouteMatch } from 'react-router-dom';
-
-const getEntry = async (id) => {
-    const res = await fetch(`/entries/${id}`);
-    const resJson = await res.json();
-    return resJson;
-}
+import { putEntry, getEntry } from '../../api/entries';
 
 const Entry = (props) => {
 
     const match = useRouteMatch();
-    const [entry, setEntry] = useState({
-        prompt: null,
-        entryContent: ""
-    });
+    const [entry, setEntry] = useState();
     const entryId = match.params.entryId;
 
     useEffect(() => {
@@ -25,20 +17,8 @@ const Entry = (props) => {
         }
     }, []);
 
-    const updateEntry = ({text, prompt, mood = 'happy'}) => {
-        fetch(`/entries/update/${entryId}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "entryContent": text,
-                "mood": mood,
-                "prompt": prompt
-            })
-        })
-        .then(res => res.json())
-        .then(res => {
+    const updateEntry = (entry) => {
+        putEntry(entry).then(res => {
             console.log('updated!', res);
         })
         .catch(err => {
@@ -48,9 +28,7 @@ const Entry = (props) => {
 
     return (
         <EntryForm
-            date={entry.createdAt ? new Date(entry.createdAt) : null}
-            prompt={entry.prompt}
-            text={entry.entryContent}
+            entry={entry}
             submitText="Update Entry"
             onSubmit={updateEntry}
         />
