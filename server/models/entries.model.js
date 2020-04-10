@@ -14,7 +14,7 @@ const EntriesSchema = new Schema({
     prompt: { 
         type: String
     },
-    tone: {
+    tones: {
         type: Array
     }
     // ,

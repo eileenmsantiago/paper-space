@@ -1,4 +1,3 @@
-
 export const getAllEntries = () => {
     return fetch('/entries')
         .then(res => res.json())

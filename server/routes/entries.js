@@ -43,14 +43,13 @@ router.route('/:id').get((req, res) => {
 //edit a specific entry from the database and update it
 router.route('/update/:id').put((req, res) => {
 
-  analyzeTone(req.body.content).then(tone => {
-    console.log(tone);
+  analyzeTone(req.body.content).then(tones => {
     return Entries.findById(req.params.id)
     .then(entries => {
       entries.content = req.body.content;
       entries.mood = req.body.mood;
       entries.prompt = req.body.prompt;
-      entries.tone = tone;
+      entries.tones = tones;
       // entries.date = Date.parse(req.body.date);
         
         //update part

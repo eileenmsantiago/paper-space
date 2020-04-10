@@ -18,14 +18,13 @@ const analyzeTone = (text) => {
   const params = {
     content_type: 'application/json',
     toneInput: {
-      text: text 
+      text: text
     },
   };
 
+  // console.log(test);
   return toneAnalyzer.tone(params).then(toneAnalysis => {
-    // return toneAnalysis[0].result.document_tone.tones;
-    return toneAnalysis[0].result.document_tone.tones.tone_id;  
-    console.log(toneAnalysis[0].result.document_tone.tones.tone_id);
+    return toneAnalysis.result.document_tone.tones;
   })
   .catch(err => {
     console.log('error:', err);
