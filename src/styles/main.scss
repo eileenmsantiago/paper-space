@@ -12,14 +12,24 @@
 @import '/mixins/typography.scss';
 @import '/mixins/links.scss';
 
-@import '../ui/PSContainer/PSContainer.scss';
-@import '../Pages/Home/Home.scss';
-@import '../Pages/Write/Write.scss';
+@import '../components/PSContainer/PSContainer.scss';
+@import '../Pages/Dashboard/Dashboard.scss';
+@import '../Pages/NewEntry/NewEntry.scss';
 @import '../Pages/Profile/Profile.scss';
+@import '../Pages/Entries/Entries.scss';
 @import '../Pages/Login/Login.scss';
-@import '../ui/Heading/Heading.scss';
-@import '../ui/Text/Text.scss';
-@import '../ui/CardCarousel/CardCarousel.scss';
-@import '../ui/Card/Card.scss';
-@import '../ui/Nav/Nav.scss';
+@import '../Pages/Register/Register.scss';
+@import '../components/App/App.scss';
+@import '../components/Heading/Heading.scss';
+@import '../components/Button/Button.scss';
+@import '../components/Header/Header.scss';
+@import '../components/Text/Text.scss';
+@import '../components/CardCarousel/CardCarousel.scss';
+@import '../components/Card/Card.scss';
+@import '../components/EntriesList/EntriesList.scss';
+@import '../components/LoginForm/LoginForm.scss';
+@import '../components/RegisterForm/RegisterForm.scss';
+@import '../components/ProfileInfo/ProfileInfo.scss';
+@import '../components/Nav/Nav.scss';
+@import '../components/TextArea/TextArea.scss';
 

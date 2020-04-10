@@ -1,0 +1,82 @@
+.body-text {
+
+    &--size {
+        &-small {
+            @include type-body-small();
+        }
+        &-regular {
+            @include type-body-regular();
+        }
+        &-large {
+            @include type-body-large();
+        }
+        &-labels {
+            @include type-body-labels();
+        }
+        &-tab {
+            @include type-body-tab();
+        }
+    }
+
+    &--weight {
+        &-bold {
+            font-weight: 900;
+        }
+        &-semi {
+            font-weight: 600;
+        }
+        &-regular {
+            font-weight: 400;
+        }
+        &-light {
+            font-weight: 300;
+        }
+    }
+
+    &--color {
+        &-primary {
+            &-peach {
+                color:$color-primary-peach;
+            }
+            &-purple {
+                color:$color-primary-purple;
+            }
+        }
+        &-secondary {
+            &-peach {
+                color:$color-secondary-peach;
+            }
+            &-purple {
+                color:$color-secondary-purple;
+            }
+        }
+        &-light {
+            &-black {
+                color:$color-neutral-light-black;
+            }
+            &-grey {
+                color:$color-neutral-light-grey;
+            }
+            &-grey2 {
+                color:$color-neutral-light-grey2;
+            }
+            &-white {
+                color:$color-neutral-light-white;
+            }
+        }
+        &-dark {
+            &-black {
+                color:$color-neutral-dark-black;
+            }
+            &-grey {
+                color:$color-neutral-dark-grey;
+            }
+            &-white {
+                color:$color-neutral-dark-white;
+            }
+        }
+        &-error {
+            color: $color-error;
+        }
+    }
+}

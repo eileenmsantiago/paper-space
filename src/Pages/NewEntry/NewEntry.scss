@@ -1,0 +1,29 @@
+.entry {
+    &__header {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
+        &-heading {
+            margin-left: 1rem;
+        }
+        &-icon {
+            margin-left: auto;
+        }
+    }
+
+    &__prompt {
+        margin-bottom: 1.5rem;
+    }
+    &__body {
+        &-header {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+textarea {
+    overflow: auto;
+    resize: vertical;
+    resize: none;
+    border-width: 0
+}
