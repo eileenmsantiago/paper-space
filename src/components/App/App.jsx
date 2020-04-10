@@ -10,102 +10,66 @@ import Register from '../../Pages/Register/Register.jsx';
 import Nav from '../Nav/Nav.jsx';
 import Entries from '../../Pages/Entries/Entries';
 import Entry from '../../Pages/Entry/Entry.jsx';
+import {journals} from '../../api/journals';
 
-// const {
-//   user,
-//   signOut,
-//   signInWithGoogle,
-// } = this.props;
 
-// const journs = {
-//   1: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+// const journals = [
+//   {
+//     id: 1,
+//     dateRange: "Jan 1-7",
+//     detail: "entry 1",
+//     entries: [
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       },
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       }
+//     ]
 //   },
-//   2: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//   {
+//     id: 2,
+//     dateRange: "Jan 8-15",
+//     detail: "entry 2",
+//     entries: [
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       },
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       },      {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       },
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       }
+//     ]
 //   },
-//   3: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   4: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   5: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//   },
-//   6: {
-//     date:"20th Jan, 2020",
-//     time:"10:15pm",
-//     brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//   {
+//     id: 3,
+//     dateRange: "Jan 16-21",
+//     detail: "entry 3",
+//     entries: [
+//       {
+//         date:"20th Jan, 2020",
+//         time:"10:15pm",
+//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
+//       }
+//     ]
 //   }
-// }
-const journals = [
-  {
-    id: 1,
-    dateRange: "Jan 1-7",
-    detail: "entry 1",
-    entries: [
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      },
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      }
-    ]
-  },
-  {
-    id: 2,
-    dateRange: "Jan 8-15",
-    detail: "entry 2",
-    entries: [
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      },
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      },      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      },
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      }
-    ]
-  },
-  {
-    id: 3,
-    dateRange: "Jan 16-21",
-    detail: "entry 3",
-    entries: [
-      {
-        date:"20th Jan, 2020",
-        time:"10:15pm",
-        brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-      }
-    ]
-  }
-]
+// ]
 
 function App() {
 

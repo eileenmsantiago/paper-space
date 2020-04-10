@@ -1,6 +1,7 @@
 import React from 'react';
 import PSContainer from '../../components/PSContainer/PSContainer';
-import CardCarousel from '../../components/CardCarousel/CardCarousel';
+// import CardCarousel from '../../components/CardCarousel/CardCarousel';
+import CardCarousel from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
 import firebase from '../../config/firebaseConfig';
 import { useHistory } from 'react-router-dom';
