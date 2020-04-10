@@ -7,10 +7,10 @@ const EntriesSchema = new Schema({
         type: String, 
         required: true 
     },
-    mood: { 
-        type: String, 
-        required: true 
-    },
+    // mood: { 
+    //     type: String, 
+    //     required: true 
+    // },
     prompt: { 
         type: String
     },

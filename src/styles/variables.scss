@@ -40,3 +40,13 @@ $color-brand-light-purple: #C7C1DF;
 $color-brand-light-teal: #A1D6CC;
 
 $color-error: #DA5D5D;
+
+$tone-colors: (
+    sadness: $color-brand-light-sky,
+    joy: $color-brand-light-yellow,
+    anger: $color-brand-light-orange,
+    fear: $color-brand-light-green,
+    analytical: $color-brand-light-blue,
+    confident: $color-brand-light-purple,
+    tentative: $color-brand-light-teal
+);

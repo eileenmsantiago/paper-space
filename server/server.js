@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // configure database 
 const db = 'mongodb+srv://paperspace:paperspace2020@cluster0-axzl6.mongodb.net/PaperSpace?retryWrites=true&w=majority';
-// const db = 'mongodb+srv://paperspace:paperspace2020@cluster0-axzl6.mongodb.net/test?retryWrites=true&w=majority';
 
 // connect to Mongo 
 mongoose

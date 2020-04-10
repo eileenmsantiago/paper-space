@@ -11,6 +11,7 @@ import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
 const Profile = (props) => {
     const history = useHistory();
     const { user } = useParams();
+    const { username, password } = props;
     if(!user) {
         // history.push('/login');
     }
@@ -37,8 +38,8 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <div className="profile__body">
-                    {/* <Text className="profile__body-heading" size="labels" color="light-grey">ACCOUNT INFO</Text> */}
-                    <ProfileInfo email="emilie@gmail.com"></ProfileInfo>
+                    <ProfileInfo email={`${firebase.isLoggedIn(username)}`}></ProfileInfo>
+                    {/* <ProfileInfo email={`${firebase.isLoggedIn(username)}`} password={`${firebase.isLoggedIn(password)}`}></ProfileInfo> */}
                 </div>
             </PSContainer>
         </div>

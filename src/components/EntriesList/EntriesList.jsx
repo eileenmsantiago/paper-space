@@ -1,5 +1,4 @@
 import React from 'react';
-import Text from '../Text/Text';
 import EntryCard from '../EntryCard/EntryCard';
 
 const EntriesList = (props) => {

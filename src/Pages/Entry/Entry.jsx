@@ -33,7 +33,6 @@ const Entry = (props) => {
             onSubmit={updateEntry}
         />
     )
-    
 }
 
 export default Entry;

@@ -40,59 +40,60 @@
         filter: blur(20px);
         z-index:-1;
         
-        .c {
+        &__blob {
             position: absolute;
             border-radius: 100%;
             animation: fade-scale 3s;  
-        }
-        .c-sadness {
-            top: 110px;
-            left: 50px;
-            width: 240px;
-            height: 200px;
-            background:$color-brand-light-sky;
-        }
-        .c-anger{
-            top: -60px;
-            left: 70px;
-            width: 180px;
-            height: 220px;
-            background: $color-brand-light-orange;
-          }
-        .c-fear {
-            top: 70px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-green;
-        }
-        .c-joy {
-            top: 110px;
-            left: 50px;
-            width: 240px;
-            height: 200px;
-            background:$color-brand-light-yellow;
-        }
-        .c-analytical {
-            top: 70px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-blue;
-        }
-        .c-confident {
-            top: 70px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-purple;
-        }
-        .c-tentative {
-            top: 70px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-teal;
+            @include tone-background();
+            &--sadness {
+                top: 110px;
+                left: 50px;
+                width: 240px;
+                height: 200px;
+                // background: #{map-get($tone-colors, sadness)};
+            }
+            &--anger{
+                top: -60px;
+                left: 70px;
+                width: 180px;
+                height: 220px;
+                // background: #{map-get($tone-colors, anger)};
+            }
+            &--fear {
+                top: 70px;
+                left: -20px;
+                width: 180px;
+                height: 180px;
+                // background: #{map-get($tone-colors, fear)};
+            }
+            &--joy {
+                top: 110px;
+                left: 50px;
+                width: 240px;
+                height: 200px;
+                // background: #{map-get($tone-colors, joy)};
+            }
+            &--analytical {
+                top: 70px;
+                left: -20px;
+                width: 180px;
+                height: 180px;
+                // background: #{map-get($tone-colors, analytical)};
+            }
+            &--confident {
+                top: 70px;
+                left: -20px;
+                width: 180px;
+                height: 180px;
+                // background: #{map-get($tone-colors, confident)};
+            }
+            &--tentative {
+                top: 70px;
+                left: -20px;
+                width: 180px;
+                height: 180px;
+                // background: #{map-get($tone-colors, tentative)};
+            }
         }
     }
     &__wrapper {
@@ -108,8 +109,6 @@
     }
 }
 
-
-
 @keyframes fade-scale{
     0%{
       transform: scale(0.1);
@@ -120,3 +119,4 @@
       opacity: 1;
     }
   }
+

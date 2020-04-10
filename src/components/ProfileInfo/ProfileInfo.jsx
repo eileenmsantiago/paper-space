@@ -17,10 +17,11 @@ const ProfileInfo = (props) => {
             </div>
             <div className="profile-info__container">
                 <Icon className="profile-info__icon" name="password" /> 
-                {/* <Text className="profile-info__content" size="regular" color="light-black">
-                    {password}
-                </Text> */}
-                <input className="profile-info__password" disabled type="password" value="test"></input>
+                <input className="profile-info__password" disabled type="password" value="password">
+                    {/* <Text className="profile-info__content" size="regular" color="light-black">
+                        {password}
+                    </Text> */}
+                </input>
             </div>
             <div className="profile-info__heading">
                 <Text size="labels" color="light-grey">PREFERENCES</Text>

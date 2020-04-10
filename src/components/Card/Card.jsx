@@ -38,7 +38,6 @@
 // export default Card;
 
 import React from 'react';
-import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
 import {journals} from '../../api/journals';
 import Swiper from 'react-id-swiper';
@@ -61,7 +60,7 @@ const Card = () => {
                                 <div className="ps-card">
                                     <div className="card-colors" >
                                         {item.entries.map((item2,j)=>{                      
-                                            return <div key={j} className={`c c-${item2.mood}`}></div>   
+                                            return <div key={j} className={`card-colors__blob card-colors__blob--${item2.mood}`}></div>   
                                         })}  
                                 </div> 
                                 <div className="ps-card__wrapper">

@@ -15,7 +15,7 @@ export const postEntry = (entry) => {
             },
             body: JSON.stringify({
                 content: entry.content,
-                mood: entry.mood,
+                // mood: entry.mood,
                 prompt: entry.prompt
             })
         })
@@ -34,7 +34,7 @@ export const putEntry = (entry) => {
         },
         body: JSON.stringify({
             content: entry.content,
-            mood: entry.mood,
+            // mood: entry.mood,
             prompt: entry.prompt
         })
     })

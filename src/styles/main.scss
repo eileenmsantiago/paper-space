@@ -11,6 +11,7 @@
 
 @import '/mixins/typography.scss';
 @import '/mixins/links.scss';
+@import '/mixins/tone-background.scss';
 
 @import '../components/PSContainer/PSContainer.scss';
 @import '../Pages/Dashboard/Dashboard.scss';
@@ -26,6 +27,7 @@
 @import '../components/Text/Text.scss';
 @import '../components/CardCarousel/CardCarousel.scss';
 @import '../components/Card/Card.scss';
+@import '../components/EntryCard/EntryCard.scss';
 @import '../components/EntriesList/EntriesList.scss';
 @import '../components/LoginForm/LoginForm.scss';
 @import '../components/RegisterForm/RegisterForm.scss';

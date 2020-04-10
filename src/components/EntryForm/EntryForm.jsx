@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Text from '../../components/Text/Text';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import TextArea from '../../components/TextArea/TextArea';
 import Icon from '../../components/Icon/Icon';
 import { useHistory } from 'react-router-dom';
 import Button from '../../components/Button/Button';
-import { useEffect } from 'react';
-
-
-const getMood = (text) => {
-    // TODO: tone analyzer
-    return 'happy';
-}
 
 const EntryForm = (props) => {
     const { submitText, onSubmit }  = props;
@@ -23,7 +16,7 @@ const EntryForm = (props) => {
             setEntry(props.entry);
         },
         [props.entry]
-    )
+    );
 
     const onTextChange = (e) => {
         setEntry({
@@ -37,19 +30,14 @@ const EntryForm = (props) => {
             ...entry,
             prompt: 'How are you feeling today? Is there anything encouraging or holding you back this week?'
         })
-    }
-
-
+    };
+    
     const goBack = () => {
         history.goBack();
     }
 
     const submit = () => {
-        const newMood = getMood(entry.text);
-        onSubmit({
-            ...entry,
-            mood: newMood
-        });
+        onSubmit(entry);
     }
 
     const date = entry.createdAt ? new Date(entry.createdAt) : new Date()
