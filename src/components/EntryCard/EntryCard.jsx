@@ -13,7 +13,6 @@ const EntryCard = (props) => {
         toneId = entry.tones[0].tone_id;
     }
 
-
     return (
         <a className="entry-card" href={`/entry/${entry._id}`}>
             <div className={`entry-card__highlight entry-card__highlight--${toneId}`}>

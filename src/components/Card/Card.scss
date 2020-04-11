@@ -50,49 +50,42 @@
                 left: 50px;
                 width: 240px;
                 height: 200px;
-                // background: #{map-get($tone-colors, sadness)};
             }
             &--anger{
                 top: -60px;
                 left: 70px;
                 width: 180px;
                 height: 220px;
-                // background: #{map-get($tone-colors, anger)};
             }
             &--fear {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, fear)};
             }
             &--joy {
                 top: 110px;
                 left: 50px;
                 width: 240px;
                 height: 200px;
-                // background: #{map-get($tone-colors, joy)};
             }
             &--analytical {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, analytical)};
             }
             &--confident {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, confident)};
             }
             &--tentative {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, tentative)};
             }
         }
     }

@@ -19,10 +19,6 @@ const Landing = (props) => {
                             </Heading>
                         </div>
                 </div>
-                {/* <div className="landing__header">
-                    <img src = "./assets/Images/psLogo.svg"/>
-                    <Heading level="h1"> Start journaling with PaperSpace now. </Heading>
-                </div> */}
                 <div className="landing__content">
                     <img src="./assets/Images/onboarding.svg" alt="colorful illustrations"></img>
                 </div>

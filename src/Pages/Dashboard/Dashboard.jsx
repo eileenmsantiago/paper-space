@@ -10,7 +10,7 @@ const Dashboard = (props) => {
     const history = useHistory();
     const user = firebase.isLoggedIn();
     if(!user) {
-        // history.push('/login');
+        history.push('/login'); // uncomment to test without logging in
     }
     const {entries} = props;
     let hasEntries = false;
