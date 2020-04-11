@@ -1,7 +1,8 @@
 import React from 'react';
 import Heading from '../../components/Heading/Heading';
 import PSContainer from '../../components/PSContainer/PSContainer';
-import { Button } from 'react-bootstrap';
+import Button from '../../components/Button/Button';
+
 
 const Landing = (props) => {
     return (

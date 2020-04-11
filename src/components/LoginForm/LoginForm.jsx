@@ -6,8 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 function LoginForm(props) {
 
-    const { history } = props;
-    // const history = useHistory();
+    // const { history } = props;
+    const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");

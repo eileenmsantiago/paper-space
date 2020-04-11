@@ -10,6 +10,7 @@
         line-height: 20px;
         letter-spacing: -0.24px;
         color: $color-neutral-light-black;
+        @include type-body-regular
 
         &:focus {
             outline: none;

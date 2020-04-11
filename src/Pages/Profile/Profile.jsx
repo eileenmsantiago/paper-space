@@ -13,7 +13,7 @@ const Profile = (props) => {
     const { user } = useParams();
     const { username, password } = props;
     if(!user) {
-        // history.push('/login');
+        history.push('/login'); // uncomment to test without logging in
     }
     return (
         <div className="profile">

@@ -44,108 +44,49 @@
             position: absolute;
             border-radius: 100%;
             animation: fade-scale 3s;  
-<<<<<<< HEAD
             @include tone-background();
             &--sadness {
                 top: 110px;
                 left: 50px;
                 width: 240px;
                 height: 200px;
-                // background: #{map-get($tone-colors, sadness)};
             }
             &--anger{
                 top: -60px;
                 left: 70px;
                 width: 180px;
                 height: 220px;
-                // background: #{map-get($tone-colors, anger)};
             }
             &--fear {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, fear)};
             }
             &--joy {
                 top: 110px;
                 left: 50px;
                 width: 240px;
                 height: 200px;
-                // background: #{map-get($tone-colors, joy)};
             }
             &--analytical {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, analytical)};
             }
             &--confident {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, confident)};
             }
             &--tentative {
                 top: 70px;
                 left: -20px;
                 width: 180px;
                 height: 180px;
-                // background: #{map-get($tone-colors, tentative)};
             }
-=======
-        }
-        .c-sadness {
-            top: 200px;
-            left: 80px;
-            width: 240px;
-            height: 200px;
-            background:$color-brand-light-sky;
-        }
-        .c-anger{
-            top: -60px;
-            left: 70px;
-            width: 180px;
-            height: 220px;
-            background: $color-brand-light-orange;
-          }
-        .c-fear {
-            top: 70px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-green;
-        }
-        .c-joy {
-            top: 110px;
-            left: 50px;
-            width: 240px;
-            height: 200px;
-            background:$color-brand-light-yellow;
-        }
-        .c-analytical {
-            top: 250px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-blue;
-        }
-        .c-confident {
-            top: 120px;
-            left: -20px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-purple;
-        }
-        .c-tentative {
-            top: 60px;
-            left: 150px;
-            width: 180px;
-            height: 180px;
-            background: $color-brand-light-teal;
->>>>>>> cd7a5e77867088c374173e37e94b8a717a46d44b
         }
     }
     &__wrapper {
