@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express(); 
 
 var admin = require("firebase-admin");
-var serviceAccount = require("path/to/serviceAccountKey.json");
+var serviceAccount = require("./paperspace-aff71-firebase-adminsdk-z9xj6-51ab38044e.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://paperspace-aff71.firebaseio.com"
