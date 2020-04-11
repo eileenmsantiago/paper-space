@@ -9,7 +9,7 @@ const journals = [
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
-          mood:"joy",
+          mood:"sadness",
         },
         {
           id:'2',
@@ -26,6 +26,7 @@ const journals = [
       detail: "journal 2",
       entries: [
         {
+          id:"1",
           date:"20th Jan, 2020",
           time:"10:15pm",
           mood:"anger",
@@ -33,21 +34,25 @@ const journals = [
           mood:"anger",
         },
         {
+          id:"2",
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
           mood:"joy",
-        },      {
+        },      
+        {
+          id:"3",
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
           mood:"analytical",
         },
         {
+          id:"4",
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
-          mood:"tentative",
+          mood:"fear",
         }
       ]
     },
@@ -57,10 +62,11 @@ const journals = [
       detail: "journal 3",
       entries: [
         {
+          id:"1",
           date:"20th Jan, 2020",
           time:"10:15pm",
           brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......",
-          mood:"fear",
+          mood:"tentative",
         }
       ]
     }
