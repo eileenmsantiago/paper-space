@@ -48,7 +48,7 @@ const ProfileInfo = (props) => {
                 </Text>
             </div>
             <div className="profile-info__container">
-                <Icon className="profile-info__icon" name="policy" /> 
+                <Icon className="profile-info__icon" name="terms" /> 
                 <Text className="profile-info__content" size="regular" color="light-black">
                     Terms of Service
                 </Text>

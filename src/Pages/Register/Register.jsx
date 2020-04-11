@@ -8,6 +8,7 @@ import RegisterForm from '../../components/RegisterForm/RegisterForm';
 const Register = (props) => {
 
     const { contentText } = props;
+
     return (
         <PSContainer>
             <div className="register">

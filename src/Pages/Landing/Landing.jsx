@@ -1,20 +1,42 @@
 import React from 'react';
 import Heading from '../../components/Heading/Heading';
 import PSContainer from '../../components/PSContainer/PSContainer';
+import Icon from '../../components/Icon/Icon';
 import { Button } from 'react-bootstrap';
+
 
 const Landing = (props) => {
     return (
         <PSContainer>
             <div className="landing">
-                <div className="landing__header">
-                    <Heading level="h1"> LANDING </Heading>
+                <div className="landing__header">  
+                    <div className="landing__header-icon">
+                        <Icon name="logo"/>
+                    </div>
+                        <div className="landing__header-heading">
+                            <Heading level="h1">
+                                Start journaling with PaperSpace now.
+                            </Heading>
+                        </div>
                 </div>
+                {/* <div className="landing__header">
+                    <img src = "./assets/Images/psLogo.svg"/>
+                    <Heading level="h1"> Start journaling with PaperSpace now. </Heading>
+                </div> */}
                 <div className="landing__content">
-                    <img src="/assets/Images/Landing-1.svg" alt="colorful illustrations"></img>
+                    <img src="./assets/Images/onboarding.svg" alt="colorful illustrations"></img>
                 </div>
                 <div className="landing__cta">
-                    <Button></Button>
+                    <Button
+                    onClick={() => {
+						props.history.push("/register");
+					}} 
+                    >CREATE AN ACCOUNT</Button>
+                    <Button className="btn btn-secondary"
+                    onClick={() => {
+						props.history.push("/login");
+					}}
+                    >SIGN IN</Button>
                 </div>
             </div>
         </PSContainer>

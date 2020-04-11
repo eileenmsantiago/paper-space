@@ -7,6 +7,7 @@ import PSContainer from '../../components/PSContainer/PSContainer';
 import ProfileAvatar from '../../components/ProfileAvatar/ProfileAvatar';
 import Text from '../../components/Text/Text';
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
+import Button from '../../components/Button/Button';
 
 const Profile = (props) => {
     const history = useHistory();
@@ -15,6 +16,11 @@ const Profile = (props) => {
     if(!user) {
         // history.push('/login');
     }
+    async function onLogout() {
+		await firebase.logout();
+		props.history.push("/");
+	}
+
     return (
         <div className="profile">
             <PSContainer>
@@ -40,6 +46,10 @@ const Profile = (props) => {
                 <div className="profile__body">
                     <ProfileInfo email={`${firebase.isLoggedIn(username)}`}></ProfileInfo>
                     {/* <ProfileInfo email={`${firebase.isLoggedIn(username)}`} password={`${firebase.isLoggedIn(password)}`}></ProfileInfo> */}
+                    <Button className="btn btn-secondary"
+                    type="submit"
+                    onClick={onLogout}
+                    >LOG OUT</Button>
                 </div>
             </PSContainer>
         </div>
