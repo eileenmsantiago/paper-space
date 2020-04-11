@@ -1,4 +1,4 @@
-onst express = require('express');
+const express = require('express');
 const mongoose = require('mongoose'); 
 const bodyParser = require('body-parser');
 
@@ -11,6 +11,13 @@ admin.initializeApp({
   databaseURL: "https://paperspace-aff71.firebaseio.com"
 });
 
+function isAuthenticated(req,res,next){
+}
+//access dashboard only when user is loggedin
+
+app.get("/dashboard",isAuthenticated,function(req,res){
+	
+})
 
 // middleware  
 app.use(bodyParser.json());
