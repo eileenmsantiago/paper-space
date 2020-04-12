@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import firebase from "../../config/firebaseConfig";
+// import axios from 'axios';
+import user from "../../api/user";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
+import { useHistory } from 'react-router-dom';
 
 function RegisterForm(props) {
 
-    const { history } = props;
+    const history = useHistory();
     const [name, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -36,7 +37,7 @@ function RegisterForm(props) {
     async function onRegister() {
         console.log('Registering new PaperSpace User...');
         try {
-            await firebase.register(name, email, password);
+            await user.register(name, email, password);
             history.replace("/dashboard");
         } catch (err) {
             setError(err.message);
@@ -45,13 +46,11 @@ function RegisterForm(props) {
 
         // axios.post('http://localhost:5000/users/add', user)
         //     .then(res => console.log(res.data));
-        
         // this.setState({
         //     username: ''
         // })
     }
     
-
     return (
         <form className="form-container" onSubmit={handleSubmit}>
             <input

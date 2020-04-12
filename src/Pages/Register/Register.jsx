@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
 import Heading from '../../components/Heading/Heading';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
-
+import withAnon from '../../hoc/withAnon';
 const Register = (props) => {
 
     const { contentText } = props;
@@ -27,4 +27,4 @@ const Register = (props) => {
         </PSContainer>
     )
 }
-export default Register;
+export default withAnon(Register);

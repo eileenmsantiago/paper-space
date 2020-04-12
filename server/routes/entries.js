@@ -6,7 +6,9 @@ let Entries = require("../models/entries.model");
 
 //Get data from the database i.e get entries stored in the database
 router.route("/").get((req, res) => {
-    Entries.find()
+  console.log(req.header('userId'))
+    Entries
+      .find({_userId: req.header('userId')})
       .sort({ date: -1 })
       .then(entries => res.json(entries))
       .catch(err => res.status(400).json("Error:" + err))
@@ -18,9 +20,8 @@ router.route("/add").post((req, res) => {
     analyzeTone(req.body.content).then(tones => {
 
       const newEntries = new Entries({
-          content: req.body.content,
+          ...req.body,
           tones: tones,
-          prompt: req.body.prompt
       });
 
       return newEntries.save()

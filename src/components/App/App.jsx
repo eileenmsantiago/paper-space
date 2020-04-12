@@ -13,64 +13,6 @@ import Entry from '../../Pages/Entry/Entry.jsx';
 import {journals} from '../../api/journals';
 
 
-// const journals = [
-//   {
-//     id: 1,
-//     dateRange: "Jan 1-7",
-//     detail: "entry 1",
-//     entries: [
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       },
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       }
-//     ]
-//   },
-//   {
-//     id: 2,
-//     dateRange: "Jan 8-15",
-//     detail: "entry 2",
-//     entries: [
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       },
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       },      {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       },
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       }
-//     ]
-//   },
-//   {
-//     id: 3,
-//     dateRange: "Jan 16-21",
-//     detail: "entry 3",
-//     entries: [
-//       {
-//         date:"20th Jan, 2020",
-//         time:"10:15pm",
-//         brief:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eleifen eleifend vestibulum......"
-//       }
-//     ]
-//   }
-// ]
-
 function App() {
 
   return (
@@ -81,17 +23,16 @@ function App() {
             <main>
               <Switch>
                 <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/landing" component={Landing} />
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
                 <Route path="/entry/:entryId" component={Entry} />
                 <Route path="/entry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/landing" component={Landing} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
                 <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
               </Switch>
             </main>
-            <Nav />
           </div>
         </div>
       </LastLocationProvider>

@@ -2,6 +2,19 @@ import app from "firebase/app";
 import "firebase/auth";
 import "firebase/firebase-firestore";
 
+export const setSession = (session) => {
+    localStorage.setItem('psSession', JSON.stringify({
+        _id: session.user.uid
+    }));
+}
+
+export const getSession = () => {
+    const session = JSON.parse(localStorage.getItem('psSession'));
+    if(session) {
+        return session;
+    }
+}
+
 const firebaseConfig = {
 	apiKey: "AIzaSyDndhZWp6KH9EHQ-mebGRwjo9Gf1nIZuSs",
 	authDomain: "paperspace-aff71.firebaseapp.com",
@@ -15,27 +28,23 @@ const firebaseConfig = {
 class Firebase {
 	constructor() {
 		app.initializeApp(firebaseConfig);
-		this.auth = app.auth();
-		this.db = app.firestore();
+        this.auth = app.auth();
+        this.auth.setPersistence(app.auth.Auth.Persistence.SESSION)
+        this.db = app.firestore();
 	}
 
-	// Firebase authentication functions
-
-	// Login
 	login(email, password) {
 		return this.auth.signInWithEmailAndPassword(email, password)
 			.then(res => {
-				this.setSession(res);
+				setSession(res);
 				return res;
 			})
 	}
 
-	// Logout
 	logout() {
 		return this.auth.signOut();
 	}
 
-	// Register
 	async register(name, email, password) {
 		await this.auth.createUserWithEmailAndPassword(email, password)
 		return this.auth.currentUser.updateProfile({
@@ -45,10 +54,13 @@ class Firebase {
 
 	isLoggedIn() {
 		return !!localStorage.getItem('userId');
-	}
+    }
+    
+    getInfo() {
+        console.log(this.auth);
+    }
 
-
-	authChange(user) {
+	onAuthChange(user) {
 		return this.auth.onAuthStateChanged(user);
 	}
 }

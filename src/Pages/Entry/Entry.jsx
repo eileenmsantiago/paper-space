@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+import {getSession} from '../../api/user';
 import EntryForm from '../../components/EntryForm/EntryForm';
-import { useRouteMatch } from 'react-router-dom';
 import { putEntry, getEntry } from '../../api/entries';
+import withAuth from '../../hoc/withAuth';
 
 const Entry = (props) => {
-
+    const history = useHistory();
+    const user = getSession();
+    if(!user) {
+        history.push('/login'); // uncomment to test without logging in
+    }
     const match = useRouteMatch();
     const [entry, setEntry] = useState();
     const entryId = match.params.entryId;
@@ -35,6 +41,6 @@ const Entry = (props) => {
     )
 }
 
-export default Entry;
+export default withAuth(Entry);
 
 

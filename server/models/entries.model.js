@@ -7,22 +7,16 @@ const EntriesSchema = new Schema({
         type: String, 
         required: true 
     },
-    // mood: { 
-    //     type: String, 
-    //     required: true 
-    // },
+    _userId: {
+        type: String,
+        required: true
+    },
     prompt: { 
         type: String
     },
     tones: {
         type: Array
     }
-    // ,
-    // date: {
-    //     type: Date,
-    //     default: Date.now,
-    //     required: true 
-    // }, 
 }, {
     timestamps: true,
 });

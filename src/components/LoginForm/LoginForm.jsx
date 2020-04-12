@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import firebase from "../../config/firebaseConfig";
+import user from "../../api/user";
 import { Button } from 'react-bootstrap';
 import Text from '../Text/Text';
 import { useHistory } from 'react-router-dom';
 
 function LoginForm(props) {
 
-    // const { history } = props;
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,7 +27,7 @@ function LoginForm(props) {
     async function onLogin() {
         console.log('Logging into User`s PaperSpace... ');
         try {
-            const login = await firebase.login(email, password);
+            const login = await user.login(email, password);
             if(login) {
                 history.replace("/dashboard");
             }

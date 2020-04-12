@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from '../../components/Heading/Heading';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import Button from '../../components/Button/Button';
-
+import withAnon from '../../hoc/withAnon';
 
 const Landing = (props) => {
     return (
@@ -22,4 +22,4 @@ const Landing = (props) => {
     )
 }
 
-export default Landing;
+export default withAnon(Landing);

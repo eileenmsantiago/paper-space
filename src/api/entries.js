@@ -1,5 +1,11 @@
+import "./user";
+
 export const getAllEntries = () => {
-    return fetch('/entries')
+    return fetch('/entries', {
+        headers: {
+            userId: localStorage.getItem('userId')
+        }
+    })
         .then(res => res.json())
         .then(res => res)
         .catch(err => {
@@ -8,17 +14,18 @@ export const getAllEntries = () => {
 }
 
 export const postEntry = (entry) => {
-    return fetch('/entries/add', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                content: entry.content,
-                // mood: entry.mood,
-                prompt: entry.prompt
-            })
+    return fetch('/entries/add',
+    {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            content: entry.content,
+            prompt: entry.prompt,
+            _userId: localStorage.getItem('userId')
         })
+    })
     .then(res => res.json())
     .then(res => res)
     .catch(err => {

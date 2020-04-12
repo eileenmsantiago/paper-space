@@ -1,17 +1,14 @@
 import React from 'react';
+import { getSession } from '../../api/user';
+import withAuth from '../../hoc/withAuth';
 import PSContainer from '../../components/PSContainer/PSContainer';
-// import CardCarousel from '../../components/CardCarousel/CardCarousel';
 import CardCarousel from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
-import firebase from '../../config/firebaseConfig';
-import { useHistory } from 'react-router-dom';
 
 const Dashboard = (props) => {
-    const history = useHistory();
-    const user = firebase.isLoggedIn();
-    if(!user) {
-        history.push('/login'); // uncomment to test without logging in
-    }
+
+    const user = getSession();
+
     const {entries} = props;
     let hasEntries = false;
     entries.forEach(entry => {
@@ -24,8 +21,7 @@ const Dashboard = (props) => {
             <PSContainer>
                 <div className="dashboard__wrapper">
                     <Header
-                        // title={`${user}'s PaperSpace`}
-                        title={`${firebase.isLoggedIn()}'s PaperSpace`}
+                        title={`${user.displayName}'s PaperSpace`}
                         subtitle={hasEntries ? `Here are your past entry collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}>
                     </Header>
                 </div>
@@ -35,4 +31,4 @@ const Dashboard = (props) => {
     );
 }
 
-export default Dashboard;
+export default withAuth(Dashboard);
