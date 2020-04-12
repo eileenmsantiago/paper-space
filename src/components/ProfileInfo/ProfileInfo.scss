@@ -5,6 +5,10 @@
 
     &__container {
         margin-bottom: 1.75rem;
+       
+    }
+    &__toggle {
+        float:right;
     }
 
     &__password {
@@ -19,5 +23,6 @@
     &__icon {
         margin-right: 1.75rem;
     }
+   
 
 }
