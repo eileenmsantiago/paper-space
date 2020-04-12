@@ -1,7 +1,6 @@
 import React from 'react';
 import Switch from 'react-ios-switch';
 
-
 class ToggleButton extends React.Component {
     constructor(props) {
       super(props);

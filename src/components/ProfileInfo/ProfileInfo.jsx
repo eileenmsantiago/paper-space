@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from '../Text/Text';
 import Icon from '../Icon/Icon';
-import Switch from '../Switch/Switch';
+import ToggleButton from '../ToggleButton/ToggleButton';
 
 const ProfileInfo = (props) => {
     const { email, password } = props;
@@ -33,7 +33,7 @@ const ProfileInfo = (props) => {
                     Dark Mode
                 </Text>
                 <div className="profile-info__toggle">
-                    <Switch />
+                    <ToggleButton />
                 </div>  
             </div>
             <div className="profile-info__heading">

@@ -14,21 +14,22 @@ const Onboarding = (props) => {
                     <div className="onboarding__header-icon">
                         <Icon name="logo"/>
                     </div>
-                        <div className="onboarding__header-heading">
-                            <Heading level="h1">
-                                Welcome to PaperSpace
-                            </Heading>
-                        </div>
+                    <div className="onboarding__header-heading">
+                        <Heading level="h1">
+                            Welcome to PaperSpace
+                        </Heading>
+                    </div>
                 </div>
                 <div className="onboarding__content">
-                    <Text size="regular" color="light-black">
-                    PaperSpace is a place for you to write freely.  
+                    <Text className="content-header" size="large" color="light-grey">
+                        PaperSpace is a place for you to write freely.
                     </Text>
-                    <Text size="regular" color="light-black">
-                    Every week you will have a card with different colors based on your mood from your written content.  
+                    <br></br>
+                    <Text size="large" color="light-grey">
+                        Every week you will have a card with different colors based on your mood from your written content.  
+                        <br></br>
+                        We also offer prompt cards to guide you in your writing journey.
                     </Text>
-                    <Text>We also offer prompted card for you </Text>
-
                 </div>
                 <div className="onboarding__cta">
                 <Button
