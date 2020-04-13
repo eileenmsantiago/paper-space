@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { LastLocationProvider } from 'react-router-last-location';
 import Dashboard from '../../Pages/Dashboard/Dashboard.jsx';
 import NewEntry from '../../Pages/NewEntry/NewEntry.jsx';
@@ -14,9 +14,6 @@ import Entries from '../../Pages/Entries/Entries';
 import Entry from '../../Pages/Entry/Entry.jsx';
 import {journals} from '../../api/journals';
 
-
-
-
 function App() {
 
   return (
@@ -26,14 +23,14 @@ function App() {
           <div className="app__content">
             <main>
               <Switch>
+                <Route path="/splash" component={Splash} />
+                <Route path="/onboarding" component={Onboarding} />
                 <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
                 <Route path="/entry/:entryId" component={Entry} />
                 <Route path="/entry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/landing" component={Landing} />
-                <Route path="/onboarding" component={Onboarding} />
-                <Route path="/splash" component={Splash} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />

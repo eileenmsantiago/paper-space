@@ -12,7 +12,7 @@ const LogoAnimation = (props) => {
         },
         to: {
             opacity: 1,
-            transform:"scale(1)" 
+            transform:"scale(1.2)" 
         },
     });
 
