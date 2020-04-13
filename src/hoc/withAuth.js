@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import Nav from '../components/Nav/Nav';
 
 const withAuth = (AuthComponent) => (props) => {
-    //
     const history = useHistory();
     // Initial states 
     const [isFetching, setIsFetching] = useState(true);
@@ -43,7 +42,6 @@ const withAuth = (AuthComponent) => (props) => {
             return null;
         }
     }
-
 };
 
 export default withAuth;

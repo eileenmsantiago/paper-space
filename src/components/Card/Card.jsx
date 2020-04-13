@@ -40,9 +40,9 @@
 import React from 'react';
 import Text from '../Text/Text';
 import {journals} from '../../api/journals';
+import { entries } from '../../api/entries';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-console.log(journals);
 
 const Card = () => {
     const params = {
@@ -77,7 +77,6 @@ const Card = () => {
                                     <div className="ps-card__entry-count" id="entry-count">
                                         <Text size="small" weight="regular" color="light-black">
                                             {hasEntries > 0 ? `${hasEntries} entries` : 'No journal entry'}
-                                            {/* {props.cardEntries} */}
                                         </Text>
                                     </div>
                                 </div>

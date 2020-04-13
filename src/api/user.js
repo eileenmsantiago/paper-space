@@ -58,7 +58,22 @@ class Firebase {
     
     getInfo() {
         console.log(this.auth);
-    }
+	}
+	
+	getId() {
+		return this.auth.currentUser.uid;
+	}
+
+	getName() {
+		return this.auth.currentUser ? this.auth.currentUser.displayName : null;
+	}
+	getEmail() {
+		return this.auth.currentUser ? this.auth.currentUser.email : null;
+	}
+	getCreatedTime() {
+		console.log(this.auth);
+		return this.auth.currentUser ? this.auth.currentUser.metadata.creationTime : null;
+	}
 
 	onAuthChange(user) {
 		return this.auth.onAuthStateChanged(user);

@@ -1,9 +1,10 @@
-import "./user";
+import user from "./user";
 
 export const getAllEntries = () => {
+    console.log(user.getId());
     return fetch('/entries', {
         headers: {
-            userId: localStorage.getItem('userId')
+            userId: user.getId()
         }
     })
         .then(res => res.json())
@@ -23,12 +24,14 @@ export const postEntry = (entry) => {
         body: JSON.stringify({
             content: entry.content,
             prompt: entry.prompt,
-            _userId: localStorage.getItem('userId')
+            _userId: user.getId()
         })
     })
     .then(res => res.json())
     .then(res => res)
-    .catch(err => res.status(400).json({success: false}));
+    .catch(err => {
+
+    });
 }
 
 export const putEntry = (entry) => {

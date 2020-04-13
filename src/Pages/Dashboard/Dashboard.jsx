@@ -2,7 +2,8 @@ import React from 'react';
 import { getSession } from '../../api/user';
 import withAuth from '../../hoc/withAuth';
 import PSContainer from '../../components/PSContainer/PSContainer';
-import CardCarousel from '../../components/Card/Card';
+// import CardCarousel from '../../components/Card/Card';
+import Card from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
 
 const Dashboard = (props) => {
@@ -26,7 +27,7 @@ const Dashboard = (props) => {
                     </Header>
                 </div>
             </PSContainer>
-            <CardCarousel entries={entries}/>
+            <Card entries={entries}/>
         </div>
     );
 }

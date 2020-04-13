@@ -1,9 +1,9 @@
 import React from 'react';
+import user from '../../api/user';
 import Text from '../Text/Text';
 import Icon from '../Icon/Icon';
 
-const ProfileInfo = (props) => {
-    const { email, password } = props;
+const ProfileBody = (props) => {
     return(
         <div className="profile-info">
             <div className="profile-info__heading">
@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
             <div className="profile-info__container">
                 <Icon className="profile-info__icon" name="email" /> 
                 <Text className="profile-info__content" size="regular" color="light-black">
-                    {email}
+                    {user.getEmail()}
                 </Text>
             </div>
             <div className="profile-info__container">
@@ -58,4 +58,4 @@ const ProfileInfo = (props) => {
 
     );
 }
-export default ProfileInfo;
+export default ProfileBody;

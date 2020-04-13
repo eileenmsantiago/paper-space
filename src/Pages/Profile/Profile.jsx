@@ -1,41 +1,42 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import {getSession} from '../../api/user';
 import withAuth from '../../hoc/withAuth';
+import user from '../../api/user';
 import Header from '../../components/Header/Header';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import Text from '../../components/Text/Text';
-import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
+import ProfileBody from '../../components/ProfileBody/ProfileBody';
+import ProfileAvatar from '../../components/ProfileAvatar/ProfileAvatar';
 
 const Profile = (props) => {
 
-    const user = getSession();
+    // const user = getSession();
+    const date = new Date(user.getCreatedTime());
+    // const email = new Date(user.getEmail());
 
     return (
         <div className="profile">
             <PSContainer>
                 <Header
-                    title={`${user.displayName}'s Profile`}
+                    title={`${user.getName()}'s Profile`}
                 / >
                 <div className="profile__nav">
                     <div className="profile__avatar">
-                        <img src="/assets/icons/profile.svg"></img>
+                        <ProfileAvatar></ProfileAvatar>
                     </div>
-                    {/* <ProfileAvatar className="profile__nav-avatar" /> */}
                     <div className="profile__nav-header">
                         <Text color="light-black" size="regular">
-                            {`${user.displayName}`}
+                            {`${user.getName()}`}
                         </Text>
                     </div>
                     <div className="profile__nav-text">
                         <Text color="light-black" size="labels" weight="semi" >
-                            Journaling with Paperspace since Jan 20th, 2020
+                            Journaling with PaperSpace since {`${date.toDateString()}`}
                         </Text>
                     </div>
                 </div>
                 <div className="profile__body">
-                    <ProfileInfo email={`${user.email}`}></ProfileInfo>
-                    {/* <ProfileInfo email={`${firebase.isLoggedIn(username)}`} password={`${firebase.isLoggedIn(password)}`}></ProfileInfo> */}
+                    <ProfileBody />
                 </div>
             </PSContainer>
         </div>

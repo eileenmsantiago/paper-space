@@ -46,20 +46,16 @@ router.route('/update/:id').put((req, res) => {
     return Entries.findById(req.params.id)
       .then(entries => {
         entries.content = req.body.content;
-        // entries.mood = req.body.mood;
         entries.prompt = req.body.prompt;
         entries.tones = tones;
-        // entries.date = Date.parse(req.body.date);
           
-          //update part
-
+        //update part
         entries.save()
           .then(updatedEntry => res.json(updatedEntry))
           .catch(err => res.status(400).json('Error: ' + err));
       })
       .catch(err => res.status(400).json('Error: ' + err));
   })
-
 });
 
 //Deleting a specific entry from the database
@@ -70,6 +66,5 @@ router.route('/delete/:id').delete((req, res) => {
     .catch(err => res.status(404).json('Error: ' + err));
 });
 
-    
 module.exports = router;
 
