@@ -13,6 +13,8 @@ const EntryCard = (props) => {
         toneId = entry.tones[0].tone_id;
     }
 
+    const date = new Date(entry.createdAt)
+
     return (
         <a className="entry-card" href={`/entry/${entry._id}`}>
             <div className={`entry-card__highlight entry-card__highlight--${toneId}`}>
@@ -20,7 +22,7 @@ const EntryCard = (props) => {
             <div className="entry-card__wrapper">
                 <div className="entry-card__header-container">
                     <div className="entry-card__header">
-                        <Text size="labels" weight="semi" color="grey2">{entry.createdAt}</Text>
+                        <Text size="labels" weight="semi" color="grey2">{date.toDateString()}</Text>
                     </div>
                     <div className="entries-time">
                         <Text size="labels" weight="semi" color="grey2">{entry.time}</Text>

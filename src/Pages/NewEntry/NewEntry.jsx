@@ -1,7 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import EntryForm from '../../components/EntryForm/EntryForm';
 import { postEntry } from '../../api/entries';
-import { useHistory } from 'react-router-dom';
+import withAuth from '../../hoc/withAuth';
 
 const NewEntry = () => {
     const history = useHistory();
@@ -25,6 +26,6 @@ const NewEntry = () => {
     )
 }
 
-export default NewEntry;
+export default withAuth(NewEntry);
 
 

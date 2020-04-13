@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Icon from '../../components/Icon/Icon';
 import Heading from '../../components/Heading/Heading';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import withAnon from '../../hoc/withAnon';
 
 const Login = (props) => {
     return (
@@ -25,4 +26,4 @@ const Login = (props) => {
         </PSContainer>
     )
 }
-export default Login;
+export default withAnon(Login);

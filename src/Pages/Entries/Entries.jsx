@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
+import user, {getSession} from '../../api/user';
 import Header from '../../components/Header/Header';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import EntryCard from '../../components/EntryCard/EntryCard';
-import { useRouteMatch } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { getAllEntries } from '../../api/entries';
+import withAuth from '../../hoc/withAuth';
 
 const Entries = (props) => {
+    const history = useHistory();
+    const user = getSession();
+    if(!user) {
+        history.push('/login'); // uncomment to test without logging in
+    }
     const match = useRouteMatch();
     const journalId = match.params.journalId;
     const { journals } = props;
@@ -29,8 +34,8 @@ const Entries = (props) => {
                     return (
                         <EntryCard entry={entry}/>
                     )
-            })}
+                })}
         </PSContainer>
     )
 }
-export default Entries;
+export default withAuth(Entries);

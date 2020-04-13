@@ -11,11 +11,9 @@
     }
     
     &__avatar {
-        width: 70px;
-        height: 70px;
         border-radius: 50%;
         margin-bottom: 1rem;
-        background-color: blue;
+        background-color: $color-neutral-light-grey2;
 
         img {
             width: 100%;
@@ -25,9 +23,5 @@
     &__body {
         display: flex;
         flex-direction: column;
-
-        // &-heading {
-        //     margin-bottom: 1.25rem;
-        // }
     }
 }

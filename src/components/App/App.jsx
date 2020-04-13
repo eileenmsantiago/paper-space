@@ -26,17 +26,16 @@ function App() {
                 <Route path="/splash" component={Splash} />
                 <Route path="/onboarding" component={Onboarding} />
                 <Route path="/" exact render={() => <Dashboard entries={journals}/>} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/landing" component={Landing} />
                 <Route path="/dashboard" render={() => <Dashboard entries={journals}/>} />
                 <Route path="/entry/:entryId" component={Entry} />
                 <Route path="/entry" component={NewEntry} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/landing" component={Landing} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
                 <Route path="/entries/:journalId" render={() => <Entries journals={journals}/>} />
               </Switch>
             </main>
-            <Nav />
           </div>
         </div>
       </LastLocationProvider>

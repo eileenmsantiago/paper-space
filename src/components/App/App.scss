@@ -13,4 +13,12 @@
         flex: 1;
         overflow-y: scroll;
     }
+
+    .loading {
+        display: flex;
+        &__spinner {
+            margin: 0 auto;
+            padding-top: 14rem;
+        }
+    }
 }
