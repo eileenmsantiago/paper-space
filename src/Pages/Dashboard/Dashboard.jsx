@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSession } from '../../api/user';
+import user from '../../api/user';
 import withAuth from '../../hoc/withAuth';
 import PSContainer from '../../components/PSContainer/PSContainer';
 // import CardCarousel from '../../components/Card/Card';
@@ -7,8 +7,6 @@ import Card from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
 
 const Dashboard = (props) => {
-
-    const user = getSession();
 
     const {entries} = props;
     let hasEntries = false;
@@ -22,7 +20,7 @@ const Dashboard = (props) => {
             <PSContainer>
                 <div className="dashboard__wrapper">
                     <Header
-                        title={`${user.displayName}'s PaperSpace`}
+                        title={`${user.getName()}'s PaperSpace`}
                         subtitle={hasEntries ? `Here are your past entry collections.` : 'Welcome to your PaperSpace, click “+” to write your first entry.'}>
                     </Header>
                 </div>

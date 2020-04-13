@@ -26,8 +26,8 @@ const withAuth = (AuthComponent) => (props) => {
 
     if(isFetching) {
         return (
-            <div>
-                Loading...
+            <div className="loading">
+                <img className="loading__spinner" src="/assets/spinner.svg"></img>
             </div>
         )
     } else {

@@ -21,7 +21,7 @@ const withAnon = (AnonComponent) => (props) => {
 
         if(isFetching) {
             return (
-                <div>Loading...</div>
+                <div><img className="loading" src="/assets/spinner.svg"></img></div>
             )
         } else {
             if(!isAuthorized) {
