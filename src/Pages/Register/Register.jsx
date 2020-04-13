@@ -8,6 +8,7 @@ import withAnon from '../../hoc/withAnon';
 const Register = (props) => {
 
     const { contentText } = props;
+
     return (
         <PSContainer>
             <div className="register">

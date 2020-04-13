@@ -44,6 +44,8 @@ import { entries } from '../../api/entries';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 
+
+
 const Card = () => {
     const params = {
         spaceBetween: 0,

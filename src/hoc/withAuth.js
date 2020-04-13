@@ -20,7 +20,7 @@ const withAuth = (AuthComponent) => (props) => {
             } else {
                 setIsFetching(false);
                     history.push("/login");
-            }
+            } 
         });
     },[]);
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Button = (props) => {
-
     const { styleType, children, onClick } = props;
     
     let buttonClass;
@@ -12,7 +11,6 @@ const Button = (props) => {
     } else {
         buttonClass = "btn-secondary";
     }
-
     return (
         <button onClick={onClick} className={`btn ${buttonClass}`}>
             {children}
@@ -20,7 +18,9 @@ const Button = (props) => {
     )
 }
 
-Button.defaultProps = {
-    styleType: "primary"
-}
+// Button.defaultProps = {
+//     styleType: "primary"
+// }
+
+
 export default Button;
