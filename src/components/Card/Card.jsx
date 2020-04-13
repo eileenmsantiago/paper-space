@@ -44,6 +44,8 @@ import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 console.log(journals);
 
+
+
 const Card = () => {
     const params = {
         spaceBetween: 0,

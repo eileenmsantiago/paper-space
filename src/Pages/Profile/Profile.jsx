@@ -10,16 +10,16 @@ import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
 import Button from '../../components/Button/Button';
 
 const Profile = (props) => {
-    const history = useHistory();
-    const { user } = useParams();
-    const { username, password } = props;
-    if(!user) {
-        history.push('/login'); // uncomment to test without logging in
-    }
-    async function onLogout() {
-		await firebase.logout();
-		props.history.push("/");
-	}
+    // const history = useHistory();
+    // const { user } = useParams();
+    // const { username, password } = props;
+    // if(!user) {
+    //     history.push('/login'); // uncomment to test without logging in
+    // }
+    // async function onLogout() {
+	// 	await firebase.logout();
+	// 	props.history.push("/");
+	// }
 
     return (
         <div className="profile">
@@ -44,12 +44,15 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <div className="profile__body">
-                    <ProfileInfo email={`${firebase.isLoggedIn(username)}`}></ProfileInfo>
+                    <ProfileInfo />
+                    {/* <ProfileInfo email={`${firebase.isLoggedIn(username)}`}></ProfileInfo> */}
                     {/* <ProfileInfo email={`${firebase.isLoggedIn(username)}`} password={`${firebase.isLoggedIn(password)}`}></ProfileInfo> */}
                     <Button className="btn btn-secondary"
-                    type="submit"
-                    onClick={onLogout}
-                    >LOG OUT</Button>
+                    // type="submit"
+                    // onClick={onLogout}
+                    >
+                    LOG OUT
+                    </Button>
                 </div>
             </PSContainer>
         </div>

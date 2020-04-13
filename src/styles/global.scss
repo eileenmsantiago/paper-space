@@ -15,3 +15,18 @@ ul {
         max-width: 100%;
     }
 }
+
+::selection { 
+    background: $color-primary-peach;opacity:0.2;
+    color: white;
+}
+textarea, input{
+    caret-color:$color-primary-peach;
+}
+
+// p {
+//     margin-bottom: 1.3em;
+//     &::selection {
+//       background: $selection-bg;
+//       color: white;
+//     }

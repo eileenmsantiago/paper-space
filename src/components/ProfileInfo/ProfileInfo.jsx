@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from '../Text/Text';
 import Icon from '../Icon/Icon';
+import ToggleButton from '../ToggleButton/ToggleButton';
 
 const ProfileInfo = (props) => {
     const { email, password } = props;
@@ -29,8 +30,11 @@ const ProfileInfo = (props) => {
             <div className="profile-info__container">
                 <Icon className="profile-info__icon" name="night" /> 
                 <Text className="profile-info__content" size="regular" color="light-black">
-                    Automatic Dark Mode
+                    Dark Mode
                 </Text>
+                <div className="profile-info__toggle">
+                    <ToggleButton />
+                </div>  
             </div>
             <div className="profile-info__heading">
                 <Text size="labels" color="light-grey">PAPERSPACE APP</Text>

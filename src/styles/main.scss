@@ -5,7 +5,6 @@
 // for layouts, containers, columns, etc. 
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
 @import '/variables.scss';
 @import '/global.scss';
 
@@ -20,13 +19,15 @@
 @import '../Pages/Entries/Entries.scss';
 @import '../Pages/Login/Login.scss';
 @import '../Pages/Register/Register.scss';
+@import '../Pages/Splash/Splash.scss';
+@import '../Pages/Onboarding/Onboarding.scss';
 @import '../Pages/Landing/Landing.scss';
 @import '../components/App/App.scss';
 @import '../components/Heading/Heading.scss';
 @import '../components/Button/Button.scss';
 @import '../components/Header/Header.scss';
 @import '../components/Text/Text.scss';
-@import '../components/CardCarousel/CardCarousel.scss';
+// @import '../components/CardCarousel/CardCarousel.scss';
 @import '../components/Card/Card.scss';
 @import '../components/EntryCard/EntryCard.scss';
 @import '../components/EntriesList/EntriesList.scss';
@@ -35,4 +36,5 @@
 @import '../components/ProfileInfo/ProfileInfo.scss';
 @import '../components/Nav/Nav.scss';
 @import '../components/TextArea/TextArea.scss';
+@import '../components/ToggleButton/ToggleButton.scss'
 
