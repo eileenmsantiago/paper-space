@@ -4,10 +4,9 @@ import PSContainer from '../../components/PSContainer/PSContainer';
 import TextArea from '../../components/TextArea/TextArea';
 import Icon from '../../components/Icon/Icon';
 import { useHistory } from 'react-router-dom';
-import Button from '../../components/Button/Button';
 
 const EntryForm = (props) => {
-    const { submitText, onSubmit }  = props;
+    const { submitText, deleteEntry, onSubmit, onDelete }  = props;
     const history = useHistory();
     const [entry, setEntry] = useState(props.entry);
 
@@ -39,7 +38,10 @@ const EntryForm = (props) => {
     const submit = () => {
         onSubmit(entry);
     }
-
+    const submitDelete = () => {
+        onDelete(entry);
+    }
+    console.log(entry)
     const date = entry.createdAt ? new Date(entry.createdAt) : new Date()
 
     return (
@@ -47,11 +49,11 @@ const EntryForm = (props) => {
             <div className="entry">
                 <div className="entry__wrapper">
                     <div className="entry__header">
-                        <a href="/"><img src="assets/icon-prompts-cards.svg"/></a>
                         <div onClick={addPrompt} className="entry__header-heading">
+                            {/* <img src="assets/icon-prompts-cards.svg"/> */}
+                            <Icon name="cards"/>
                             <Text  size="small" weight="light" color="light-black">USE PROMPTS</Text>
                         </div>
-                        
                         <div onClick={goBack} className="entry__header-icon">
                             <Icon name="close"/>
                         </div>
@@ -71,10 +73,13 @@ const EntryForm = (props) => {
                     </div>
                 </div>
                 {entry.content && (
-                    <div>
-                        <Button onClick={submit}>
+                    <div className="entry__footer">
+                        <div onClick={submitDelete}>
+                            <Icon name="bin">{deleteEntry}</Icon>
+                        </div>
+                        <div className="entry__footer-cta" onClick={submit}>
                             {submitText}
-                        </Button>
+                        </div>
                     </div>
                 )}
             </div>
@@ -92,5 +97,3 @@ EntryForm.defaultProps = {
 }
 
 export default EntryForm;
-
-

@@ -28,9 +28,7 @@ export const postEntry = (entry) => {
     })
     .then(res => res.json())
     .then(res => res)
-    .catch(err => {
-        // TODO: handle catch
-    })
+    .catch(err => res.status(400).json({success: false}));
 }
 
 export const putEntry = (entry) => {
@@ -41,9 +39,18 @@ export const putEntry = (entry) => {
         },
         body: JSON.stringify({
             content: entry.content,
-            // mood: entry.mood,
             prompt: entry.prompt
         })
+    })
+    .then(res => res.json())
+    .then(res => res)
+    .catch(err => {
+       
+    })
+}
+export const deleteEntry = (entry) => {
+    return fetch(`/entries/delete/${entry._id}`, {
+        method: 'DELETE'
     })
     .then(res => res.json())
     .then(res => res)

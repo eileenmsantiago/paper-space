@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import {getSession} from '../../api/user';
 import EntryForm from '../../components/EntryForm/EntryForm';
-import { putEntry, getEntry } from '../../api/entries';
+import { putEntry, getEntry, deleteEntry } from '../../api/entries';
 import withAuth from '../../hoc/withAuth';
 
 const Entry = (props) => {
@@ -17,9 +17,15 @@ const Entry = (props) => {
 
     useEffect(() => {
         if(entryId) {
-            getEntry(entryId).then(entry => {
-                setEntry(entry);
-            })
+            getEntry(entryId)
+                .then(entry => {
+                    if(entry) {
+                        setEntry(entry);
+                    } else {
+                        history.push('/entries');
+                    }
+
+                })
         }
     }, []);
 
@@ -32,11 +38,23 @@ const Entry = (props) => {
         })
     }
 
+    const entryDeleted = (entry) => {
+        deleteEntry(entry).then(res => {
+            console.log('deleted!', res);
+            history.push('/entries')
+        })
+        .catch(err => {
+            // TODO: Handle catch
+        })
+    }
+
     return (
         <EntryForm
             entry={entry}
-            submitText="Update Entry"
+            submitText="Save"
             onSubmit={updateEntry}
+            deleteText="Delete"
+            onDelete={entryDeleted}
         />
     )
 }

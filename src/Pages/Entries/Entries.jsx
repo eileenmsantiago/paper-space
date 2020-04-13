@@ -34,7 +34,7 @@ const Entries = (props) => {
                     return (
                         <EntryCard entry={entry}/>
                     )
-            })}
+                })}
         </PSContainer>
     )
 }

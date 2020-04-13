@@ -63,7 +63,8 @@ router.route('/update/:id').put((req, res) => {
 });
 
 //Deleting a specific entry from the database
-router.route('/:id').delete((req, res) => {
+router.route('/delete/:id').delete((req, res) => {
+  console.log(req.params.id);
   Entries.findByIdAndDelete(req.params.id)
     .then(() => res.json('Entry deleted.'))
     .catch(err => res.status(404).json('Error: ' + err));

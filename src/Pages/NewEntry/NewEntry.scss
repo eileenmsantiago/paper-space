@@ -4,9 +4,7 @@
         align-items: center;
         margin-bottom: 2rem;
         width: 100%;
-        &-heading {
-            margin-left: 1rem;
-        }
+        
         &-icon {
             margin-left: auto;
         }
@@ -15,9 +13,20 @@
     &__prompt {
         margin-bottom: 1.5rem;
     }
+
     &__body {
         &-header {
             margin-bottom: 1.5rem;
+        }
+    }
+
+    &__footer {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+
+        &-cta {
+            margin-left: auto;
         }
     }
 }
