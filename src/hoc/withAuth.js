@@ -33,10 +33,12 @@ const withAuth = (AuthComponent) => (props) => {
     } else {
         if(isAuthorized) {
             return (
-                <div>
-                    <AuthComponent {...props}/>
+                <>
+                    <div className="app__auth-content">
+                        <AuthComponent {...props}/>
+                    </div>
                     <Nav />
-                </div>
+                </>
             )
         } else {
             return null;

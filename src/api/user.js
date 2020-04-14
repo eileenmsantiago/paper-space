@@ -2,19 +2,6 @@ import app from "firebase/app";
 import "firebase/auth";
 import "firebase/firebase-firestore";
 
-export const setSession = (session) => {
-    localStorage.setItem('psSession', JSON.stringify({
-        _id: session.user.uid
-    }));
-}
-
-export const getSession = () => {
-    const session = JSON.parse(localStorage.getItem('psSession'));
-    if(session) {
-        return session;
-    }
-}
-
 const firebaseConfig = {
 	apiKey: "AIzaSyDndhZWp6KH9EHQ-mebGRwjo9Gf1nIZuSs",
 	authDomain: "paperspace-aff71.firebaseapp.com",
@@ -35,10 +22,7 @@ class Firebase {
 
 	login(email, password) {
 		return this.auth.signInWithEmailAndPassword(email, password)
-			.then(res => {
-				setSession(res);
-				return res;
-			})
+			.then(res => res)
 	}
 
 	logout() {
@@ -51,14 +35,6 @@ class Firebase {
 			displayName: name
 		});
 	}
-
-	isLoggedIn() {
-		return !!localStorage.getItem('userId');
-    }
-    
-    getInfo() {
-        console.log(this.auth);
-	}
 	
 	getId() {
 		return this.auth.currentUser.uid;
@@ -67,11 +43,12 @@ class Firebase {
 	getName() {
 		return this.auth.currentUser ? this.auth.currentUser.displayName : null;
 	}
+
 	getEmail() {
 		return this.auth.currentUser ? this.auth.currentUser.email : null;
 	}
+
 	getCreatedTime() {
-		console.log(this.auth);
 		return this.auth.currentUser ? this.auth.currentUser.metadata.creationTime : null;
 	}
 

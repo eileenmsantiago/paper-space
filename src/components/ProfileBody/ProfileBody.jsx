@@ -57,9 +57,7 @@ const ProfileBody = (props) => {
                     Terms of Service
                 </Text>
             </div>
-
         </div>
-
     );
 }
 export default ProfileBody;

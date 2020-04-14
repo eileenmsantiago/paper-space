@@ -1,8 +1,20 @@
 import user from "./user";
 
-export const getAllEntries = () => {
-    console.log(user.getId());
-    return fetch('/entries', {
+export const getAllEntries = ({from, to}) => {
+
+    let url = '/entries';
+    if(from || to) {
+        console.log(from, to);
+        url += '?';
+        if(from) {
+            url += `from=${from}`;
+        }
+        if(to) {
+            url += `${from ? '&' : ''}to=${to}`;
+        }
+    }
+
+    return fetch(url, {
         headers: {
             userId: user.getId()
         }
@@ -10,7 +22,8 @@ export const getAllEntries = () => {
         .then(res => res.json())
         .then(res => res)
         .catch(err => {
-            // TODO: handle catch
+            console.error(err);
+            return err;
         })
 }
 
@@ -30,7 +43,8 @@ export const postEntry = (entry) => {
     .then(res => res.json())
     .then(res => res)
     .catch(err => {
-
+        console.error(err);
+        return err;
     });
 }
 
@@ -48,7 +62,8 @@ export const putEntry = (entry) => {
     .then(res => res.json())
     .then(res => res)
     .catch(err => {
-       
+        console.error(err);
+        return err;
     })
 }
 export const deleteEntry = (entry) => {
@@ -58,7 +73,8 @@ export const deleteEntry = (entry) => {
     .then(res => res.json())
     .then(res => res)
     .catch(err => {
-        // TODO: handle catch
+        console.error(err);
+        return err;
     })
 }
 
@@ -67,6 +83,7 @@ export const getEntry = (id) => {
         .then(res => res.json())
         .then(res => res)
         .catch(err => {
-            // TODO: handle catch
+            console.error(err);
+            return err;
         })
 }

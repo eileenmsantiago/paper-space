@@ -5,15 +5,14 @@ import Icon from '../../components/Icon/Icon';
 import Heading from '../../components/Heading/Heading';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import withAnon from '../../hoc/withAnon';
-const Register = (props) => {
 
-    const { contentText } = props;
+const Register = (props) => {
 
     return (
         <PSContainer>
             <div className="register">
                 <div className="register__header">
-                    <Header backLink="/" />
+                    <Header/>
                     <div className="register__header-icon">
                         <Icon name="logo"/>
                     </div>
@@ -28,4 +27,5 @@ const Register = (props) => {
         </PSContainer>
     )
 }
+
 export default withAnon(Register);

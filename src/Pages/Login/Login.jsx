@@ -11,7 +11,7 @@ const Login = (props) => {
         <PSContainer>
             <div className="login">
                 <div className="login__header">
-                    <Header backLink="/" />
+                    <Header/>
                     <div className="login__header-icon">
                         <Icon name="logo"/>
                     </div>

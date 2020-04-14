@@ -15,7 +15,7 @@ const EntriesList = (props) => {
 }
 
 EntriesList.defaultProps = {
-    entries: [1]
+    entries: []
 }
 
 export default EntriesList;

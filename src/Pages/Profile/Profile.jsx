@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
 import withAuth from '../../hoc/withAuth';
 import user from '../../api/user';
 import Header from '../../components/Header/Header';
@@ -7,13 +6,20 @@ import PSContainer from '../../components/PSContainer/PSContainer';
 import Text from '../../components/Text/Text';
 import ProfileBody from '../../components/ProfileBody/ProfileBody';
 import ProfileAvatar from '../../components/ProfileAvatar/ProfileAvatar';
+import Button from '../../components/Button/Button';
+import { useHistory } from 'react-router-dom';
 
 const Profile = (props) => {
 
-    // const user = getSession();
+    const history = useHistory();
     const date = new Date(user.getCreatedTime());
-    // const email = new Date(user.getEmail());
+    
+    const logout = () => {
+        user.logout().then(() => {
+            history.push('/login');
+        })
 
+    }
     return (
         <div className="profile">
             <PSContainer>
@@ -38,6 +44,7 @@ const Profile = (props) => {
                 <div className="profile__body">
                     <ProfileBody />
                 </div>
+                <Button onClick={logout}>Logout</Button>
             </PSContainer>
         </div>
     )

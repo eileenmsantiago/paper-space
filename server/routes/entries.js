@@ -3,14 +3,30 @@ const analyzeTone = require('./tone')
 const router = require("express").Router();
 //import our model(which is our mongodb collection and schema)
 let Entries = require("../models/entries.model");
+const moment = require('moment');
 
 //Get data from the database i.e get entries stored in the database
 router.route("/").get((req, res) => {
-  console.log(req.header('userId'))
-    Entries
+
+  const {from, to} = req.query;
+  
+  Entries
       .find({_userId: req.header('userId')})
-      .sort({ date: -1 })
-      .then(entries => res.json(entries))
+      .sort({ createdAt: -1 })
+      .then(entries => {
+
+        if(from) {
+          const fromDate = moment(from, "YYYYMMDD");
+          entries = entries.filter(entry => moment(entry.createdAt).isAfter(fromDate));
+        }
+
+        if(to) {
+          const toDate = moment(to, "YYYYMMDD");
+          entries = entries.filter(entry => moment(entry.createdAt).isBefore(toDate));
+        }
+
+        return res.json(entries)
+      })
       .catch(err => res.status(400).json("Error:" + err))
 });
 
@@ -60,7 +76,6 @@ router.route('/update/:id').put((req, res) => {
 
 //Deleting a specific entry from the database
 router.route('/delete/:id').delete((req, res) => {
-  console.log(req.params.id);
   Entries.findByIdAndDelete(req.params.id)
     .then(() => res.json('Entry deleted.'))
     .catch(err => res.status(404).json('Error: ' + err));

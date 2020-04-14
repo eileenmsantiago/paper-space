@@ -10,7 +10,7 @@ class Splash extends React.Component{
      componentDidMount() {
         setTimeout(()=> {
             this.props.history.push('/onboarding');
-        },4000
+        },3000
         )
       }
 

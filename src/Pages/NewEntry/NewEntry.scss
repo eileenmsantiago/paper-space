@@ -8,6 +8,10 @@
         &-icon {
             margin-left: auto;
         }
+
+        &-heading {
+            cursor: pointer;
+        }
     }
 
     &__prompt {
@@ -27,6 +31,7 @@
 
         &-cta {
             margin-left: auto;
+            cursor: pointer;
         }
     }
 }

@@ -9,7 +9,7 @@
         flex-direction: column;
     }
 
-    main {
+    &__auth-content {
         flex: 1;
         overflow-y: scroll;
     }

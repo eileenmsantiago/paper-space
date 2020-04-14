@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory, useRouteMatch, useParams } from 'react-router-dom';
-import user, {getSession} from '../../api/user';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import moment from 'moment';
 import Header from '../../components/Header/Header';
 import PSContainer from '../../components/PSContainer/PSContainer';
 import EntryCard from '../../components/EntryCard/EntryCard';
-import { getAllEntries } from '../../api/entries';
+import Heading from '../../components/Heading/Heading';
+import Text from '../../components/Text/Text';
 import withAuth from '../../hoc/withAuth';
+import useEntries from '../../hoc/useEntries';
+
+const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
+}
 
 const Entries = (props) => {
-    const history = useHistory();
-    const user = getSession();
-    if(!user) {
-        history.push('/login'); // uncomment to test without logging in
-    }
-    const match = useRouteMatch();
-    const journalId = match.params.journalId;
-    const { journals } = props;
-    const [entries, setEntries] = useState([]);
-    // const entries = journals[journalId-1].entries;
+    const query = useQuery();
+    const entries = useEntries(query.get('from'), query.get('to'));
+    const from = moment(query.get('from'));
+    const to = moment(query.get('to'));
 
-    useEffect(() => {
-        getAllEntries().then(res => {
-            setEntries(res);
-        })
-        .catch(err => {
-            // TODO: handle catch
-        })
-    }, []);
     return(
         <PSContainer>
-            <Header backLink="/"></Header>
-                {entries.map(entry => {
-                    return (
-                        <EntryCard entry={entry}/>
-                    )
-                })}
+            <Header backLink="/dashboard"/>
+            <div style={{display: 'flex', marginBottom: '1rem'}}>
+                <Heading level="h1">Journal Entries</Heading>
+                <div style={{marginLeft: 'auto'}}>
+                    <Text color="dark-grey">{`${from.format('MMM-DD')} - ${to.format('DD')}`}</Text>
+                </div>
+            </div>
+            {entries.map(entry => {
+                return (
+                    <EntryCard entry={entry}/>
+                )
+            })}
         </PSContainer>
     )
 }
