@@ -1,0 +1,24 @@
+.app {
+    display: flex;
+    justify-content: center;
+    &__content {
+        width: 100%;
+        height: 100vh;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__auth-content {
+        flex: 1;
+        overflow-y: scroll;
+    }
+
+    .loading {
+        display: flex;
+        &__spinner {
+            margin: 0 auto;
+            padding-top: 14rem;
+        }
+    }
+}

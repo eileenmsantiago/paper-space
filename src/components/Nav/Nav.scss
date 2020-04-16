@@ -1,0 +1,51 @@
+.nav {
+    width: 100%;
+    height: 85px;
+    background-color: $color-neutral-light-white;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
+
+    &__list {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-decoration: none;
+        list-style: none;
+        float: left;
+        li {
+            display: flex;
+            align-items: center;
+            flex: 3 1;
+            justify-content: center;
+            height: 100%;
+            &-icon {
+                align-items: center;
+            }
+
+            // &:not(:last-child) {
+            //     border-right: 0.5px solid $color-primary-peach;
+            // }
+        }
+    }
+
+    &__link {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        @include link();
+
+        &--active {
+
+            .body-text {
+                color: #615B5B; 
+            }
+
+           svg path {
+               stroke: #615B5B;
+           }
+        }
+
+        &-icon {
+            margin: auto;
+        }
+    }
+}

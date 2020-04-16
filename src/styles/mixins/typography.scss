@@ -2,7 +2,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     line-height: normal;
-    color: $color-neutral-light-grey;
+    color: $color-neutral-light-black;
 }
 
 @mixin type-heading-base {
@@ -22,6 +22,7 @@
     @include type-body-base();
     font-size: 14px;
     line-height: 16px;
+    letter-spacing: 2px;
 }
 @mixin type-body-large {
     @include type-body-base();
@@ -40,7 +41,7 @@
     @include type-body-base();
     font-size: 14px;
     line-height: 16px;
-    // font-weight: 600;
+    letter-spacing: 0.12px;
 }
 
 @mixin type-heading-h1 {

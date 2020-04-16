@@ -3,14 +3,16 @@
 $color-primary-peach: #E79C88;
 $color-primary-purple: #5881EA;
 // Secondary
-$color-secondary-peach: #E79C88;
+$color-secondary-peach: #E68577;
 $color-secondary-purple: #5881EA;
 
 // Neutrals
 // Light Mode
 $color-neutral-light-black: #615B5B;
 $color-neutral-light-grey: #AFADAB;
+$color-neutral-light-grey2: #DADADA;
 $color-neutral-light-white: #FCFCFB;
+$color-neutral-light-white2: #FDFDFA;
 
 // Dark Mode
 $color-neutral-dark-black: #222A3D;
@@ -36,3 +38,15 @@ $color-brand-light-sky: #E2F1F4;
 $color-brand-light-blue: #97B1F4;
 $color-brand-light-purple: #C7C1DF;
 $color-brand-light-teal: #A1D6CC;
+
+$color-error: #DA5D5D;
+
+$tone-colors: (
+    sadness: $color-brand-light-sky,
+    joy: $color-brand-light-yellow,
+    anger: $color-brand-light-orange,
+    fear: $color-brand-light-green,
+    analytical: $color-brand-light-blue,
+    confident: $color-brand-light-purple,
+    tentative: $color-brand-light-teal
+);

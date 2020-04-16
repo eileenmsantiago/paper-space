@@ -1,0 +1,24 @@
+@mixin tone-background {
+    &--analytical {
+        background: #{map-get($tone-colors, analytical)};
+    }
+    &--anger {
+        background: #{map-get($tone-colors, anger)};
+    }
+    &--confident {
+        background: #{map-get($tone-colors, confident)};
+    }
+    &--fear {
+        background: #{map-get($tone-colors, fear)};
+    }
+    &--joy {
+        background: #{map-get($tone-colors, joy)};
+    }
+    &--sadness {
+        background: #{map-get($tone-colors, sadness)};
+    }
+    &--tentative {
+        background: #{map-get($tone-colors, tentative)};
+    }
+    
+}

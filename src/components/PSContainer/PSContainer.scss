@@ -1,0 +1,7 @@
+.ps__container {
+    padding: 1.25rem;
+    padding-top: 2.5rem;
+    @media (min-width: 1200px){
+        max-width: 1000px;
+    }
+}

@@ -1,0 +1,43 @@
+.entry {
+    &__header {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
+        
+        &-icon {
+            margin-left: auto;
+        }
+
+        &-heading {
+            cursor: pointer;
+        }
+    }
+
+    &__prompt {
+        margin-bottom: 1.5rem;
+    }
+
+    &__body {
+        &-header {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__footer {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+
+        &-cta {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+}
+textarea {
+    overflow: auto;
+    resize: vertical;
+    resize: none;
+    border-width: 0
+}
