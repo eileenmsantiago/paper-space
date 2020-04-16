@@ -32,7 +32,7 @@ const EntryForm = (props) => {
     };
     
     const goBack = () => {
-        history.goBack();
+        history.push('/');
     }
 
     const submit = () => {
