@@ -3,7 +3,8 @@ Paper Space is a journaling application for users to creatively and freely write
 
 ## Tools & Technology
 FE (libraries & framework)
-- React 
+- React.js
+- Sass 
 
 BE 
 - Node
@@ -11,6 +12,7 @@ BE
 
 DB 
 - Mongo 
+- Firebase Auth
 
 API 
 - IBM Watson Tone Analyzer
